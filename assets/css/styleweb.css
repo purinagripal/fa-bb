@@ -1,0 +1,188 @@
+@import url(http://fonts.googleapis.com/css?family=Permanent+Marker|Allerta+Stencil|Slackey|Oxygen|Unica+One);
+
+body {font-size: 14px; font-weight:normal; line-height: 1.8; font-family: 'Oxygen',Arial,Helvetica; background-color:#111;color: #fff;}
+
+/* Para corregir colores ratchet */
+.content {
+    background-color: #111;
+}
+/* fin ratchet */
+
+h1,h2,h3,h4,h5,h6{ font-weight:normal;padding: 0;margin: 0;color: #fff;}
+h1,h2,h3{ font-family: 'Allerta Stencil',Arial,Helvetica;text-transform: uppercase;}
+h4,h5,h6{ font-family: 'Unica One',Arial,Helvetica;color: #ccc;}
+
+h3{font-size: 1.55em; margin-top: 1.56em; margin-bottom: 1.25em; color: #fff;}
+h3 span{font-size: 1.5em;}
+h4{font-size: 1.5em; margin-bottom:1.25em; line-height: 1.6;}
+h5{font-size: 1.4em;}
+
+small{color: #777;font-size: 0.8em;}
+p{margin-bottom: 1.56em;}
+blockquote {padding: 0 1.25em; margin: 0 0 1.25em; border-left: 5px solid #aaa; font-size: 0.87em; font-style: italic; font-family: georgia;}
+
+.spacer{padding:2em 0 0 0;}
+.center{text-align: center;}
+.thumbnail{ background-color:#fff;}
+
+.overlay{z-index: 100;position: relative;}
+.blockblack{background:rgba(0,0,0,0.75); border-radius: 10px; padding: 1.55em; padding-top: 0; }
+
+
+/*color*/
+.bgcolor{background-color: #f2ab00;} /* amarillo */
+.textcolor{color: #f2ab00;}
+a {color:#f2ab00; text-decoration:none}
+a:hover{color:#fff;text-decoration:none}
+/*color*/
+
+
+/* barra menu nav */
+.navbar-brand{padding: 0.6em 0;}
+.navbar-nav > li > a {font-size: 1em; font-weight: bold; margin-top: 1em;}
+.navbar-inverse{background: #000;border:none;}
+/* colores de los enlaces */
+.navbar-inverse .navbar-nav > li > a {color: #ccc;}
+.navbar-inverse .navbar-nav > li > a:hover,
+.navbar-inverse .navbar-nav > li > a:focus { color: #f2ab00; background-color: transparent; }
+.navbar-inverse .navbar-nav > .active > a,
+.navbar-inverse .navbar-nav > .active > a:hover,
+.navbar-inverse .navbar-nav > .active > a:focus { color: #f2ab00; background-color: transparent;}
+/* barra menu nav */
+
+
+/* home --- en INDEX */
+.homeinfo { padding: 7.5em 0 1.25em 0;}
+.fronttext h1 {padding: 0.1em; font-size:2.3em; line-height:1; display: inline-block; }
+.fronttext p {margin:0; margin-top: 1em; background-color: rgba(0,0,0,0.7);display: inline-block;padding: 0.6em;}
+.homeinfo .publi {position: relative;}
+/* home  --- en INDEX */
+
+
+/* proximos eventos + noticias --- en INDEX */
+.prox-eventos-noticias {color: #ddd;}
+.prox-eventos-noticias ul{padding: 0; list-style: none; margin-top: 2.2em;}
+
+/*
+.prox-eventos ul li {background-color: #222; margin-bottom: 0.7em; }
+.prox-eventos ul li img {margin-bottom: 0.9em;}
+.prox-eventos ul li h5 {margin: 0.5em 0;}
+.prox-eventos ul li p {margin: 0.6em 0; font-size: 1.12em; line-height: 1;}
+.prox-eventos ul li .date {text-align: center; color: #aaa; padding: 0.5em 0; background-color: #111;}
+.prox-eventos ul li .date b {display: block; font-size: 1.5em;}
+.prox-eventos ul li .date span {font-size: 1.25em;}
+*/
+
+/* guiaeventos --- en INDEX (proximos eventos), en AGENDA y en otros eventos EVENTO */
+.guiaeventos h4 {border-bottom: 1px solid;}
+.guiaeventos .cuadro {background-color: #222; margin: 0 0.1em 0.7em;}
+.guiaeventos .cuadro img {margin-bottom: 0.9em;}
+.guiaeventos .cuadro h5 {margin: 0.5em 0;}
+.guiaeventos .cuadro p {margin: 0.6em 0; font-size: 1.12em; line-height: 1;}
+.guiaeventos .cuadro .date {text-align: center; color: #aaa; padding: 0.5em 0; margin-bottom: 5px; background-color: #111;}
+.guiaeventos .cuadro .date span { display: block; font-size: 1.25em; line-height: 1.2;}
+.guiaeventos .cuadro .date span.dia { font-size: 1.1em; padding-bottom: 0.5em; }
+.guiaeventos .cuadro .date b {font-size: 1.6em;}
+.guiaeventos .cuadro .date span.hora {font-size: 1.5em; line-height: 1.8;}
+/*.guiaeventos .cuadro .date b{display: block;font-size: 1.5em;}
+.guiaeventos .cuadro .date span{font-size: 1.25em;}*/
+/* guiaeventos --- en INDEX, AGENDA y EVENTO */
+
+.noticias ul li {margin-bottom: 1.4em;}
+.noticias ul li p {font-size: 0.8em; margin: 0;}
+.noticias ul li img {float: left; margin-right: 1.25em;}
+.noticias ul li .blogtext{overflow: hidden;}
+/* proximos eventos +  noticias --- en INDEX */
+
+/* guia de eventos por categoria --- en INDEX */
+.g-eventos-categ {margin-bottom: 1em;}
+.g-eventos-categ .caja {background-color: #222; margin-bottom: 2em;}
+.g-eventos-categ .caja .texto-caja{padding: 0.5em;}
+.g-eventos-categ .caja .texto-caja h5{}
+.g-eventos-categ .caja .texto-caja a{font-size:0.8em; float: right;}
+/* guia de eventos por categoria --- en INDEX */
+
+/* contacto --- en INDEX */
+.contactform {margin-bottom: 1.5em;}
+.contactform textarea, .contactform input {width: 100%; padding:2%; border:1px solid #ccc; margin-bottom: 1.2em; border-radius: 5px; outline: none;}
+.contactform button{border:none; width: 100%; padding: 0.3em 0; font-size: 1.5em;}
+.contactform iframe{float: left;}
+/* contacto --- en INDEX */
+
+
+/* evento-detalle --- en EVENTO */
+.evento-detalle .cuadro {background-color: #222; margin-bottom: 1em; }
+.evento-detalle .cuadro img {margin-bottom: 1em;}
+.evento-detalle .cuadro h4 {color: #f2ab00; font-size: 2em; margin: 1em 0 0.5em; }
+.evento-detalle .cuadro p {margin: 0.6em 0; font-size: 1.12em; line-height: 1; }
+.evento-detalle .cuadro .datos-evento p {text-align: right;}
+.evento-detalle .cuadro .descr-evento { margin: 1em 0;}
+.evento-detalle .cuadro .descr-evento p {font-size: 0.9em; line-height: 1.4; text-align: justify;}
+.evento-detalle .cuadro .date {text-align: center; color: #aaa; padding: 0.5em 0; background-color: #111; margin-bottom: 1.5em;}
+.evento-detalle .cuadro .date span { font-size: 1.25em; line-height: 1.2;}
+.evento-detalle .cuadro .date span.dia { font-size: 1.1em; padding-bottom: 0.5em; }
+.evento-detalle .cuadro .date b {font-size: 1.65em;}
+.evento-detalle .cuadro .date span.hora {display: block; font-size: 1.5em; line-height: 1.8;}
+/*.evento-detalle .cuadro .date b {font-size: 1.5em;}
+.evento-detalle .cuadro .date span {font-size: 1.25em;}*/
+.evento-detalle .cuadro h5 { margin-bottom: 0.8em; color: #f2ab00;}
+.mapa-google { width: 100%; height: 18em; border:0; margin: 0 auto 1.5em;}
+/* evento-detalle --- en EVENTO */
+
+/* proximos eventos, Sidebar --- en EVENTO */
+.prox-eventos-sb h3 {font-size: 1.5em;}
+.prox-eventos-sb .cuadro {background-color: #222; margin: 0 0.1em 0.7em;}
+.prox-eventos-sb .cuadro img {margin-bottom: 0.9em;}
+.prox-eventos-sb .cuadro h5 {margin: 0.5em 0;}
+.prox-eventos-sb .cuadro p {margin: 0.6em 0; font-size: 1.12em; line-height: 1;}
+.prox-eventos-sb .cuadro .date {text-align: center; color: #aaa; padding: 0.5em 0; margin-bottom: 5px; background-color: #111;}
+.prox-eventos-sb .cuadro .date span {display: block; font-size: 1.25em; line-height: 1.2;}
+.prox-eventos-sb .cuadro .date span.dia { font-size: 1.1em; padding-bottom: 0.5em; }
+.prox-eventos-sb .cuadro .date b {font-size: 1.6em;}
+.prox-eventos-sb .cuadro .date span.hora {font-size: 1.5em; line-height: 1.8;}
+/* proximos eventos, Sidebar --- en EVENTO */
+
+
+#footer{background-color: #000; padding: 0.6em 0; color: #fff; font-size: 0.8em; color: #aaa; margin-top: 3em; z-index: 100; position: relative;}
+
+
+/*background slider*/
+.carousel{position: fixed; top: 0; left: 0;right: 0;bottom: 0; z-index:10;width: 100%;}
+.carousel .item {-webkit-transition: opacity 2s;
+    -moz-transition: opacity 1s;
+    -ms-transition: opacity 1s;
+    -o-transition: opacity 1s;
+    transition: opacity 1s;}
+.carousel .active.left {left:0;opacity:0;z-index:2;}
+.carousel .next {left:0;opacity:1;z-index:1;}
+.carousel-inner > .item > img, .carousel-inner > .item > a > img{width: 100%;}
+/*background slider*/
+
+
+/*animation - revisar */ 
+.blockblack, #publica, .caja, .prox-eventos-noticias ul li, h3, h4, .guiaeventos .cuadrooculto, .prox-eventos-sb .cuadrooculto {visibility: hidden;}
+.animated{visibility: visible !important;}
+/*animation*/
+
+
+
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    /*body {font-size: 14px;}*/
+    .fronttext h1 {font-size:3em;}
+    .evento-detalle .cuadro .date span.hora {display:inline}
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    body {font-size: 16px;}
+    
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    
+}
