@@ -3,25 +3,22 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-<!--    <link href="assets/css/ratchet.css" rel="stylesheet">-->
+
     <link href="assets/css/bootstrap.css" rel="stylesheet"/>
-<!--    <link href="assets/css/styles.css" rel="stylesheet">-->
     <link href="assets/css/styleweb.css" rel="stylesheet"/>
     <link href="assets/css/pageslider.css" rel="stylesheet">
 </head>
 <body>
 
 <script id="home-tpl" type="text/template">
-    <header class="bar bar-nav">
+    <div class="header">
         <h1 class="title">Fuerte Agenda</h1>
         <a id="salir" onclick="navigator.app.exitApp();" class="btn btn-link btn-nav pull-right" href="#">
-            <span class="icon icon-close"></span>
+            salir
         </a>
-    </header>
-    <div class="content">
-        <div class="container guiaeventos">
+    </div>
+    <div class="container guiaeventos">
 
-        </div>
     </div>
 </script>
 
@@ -43,7 +40,7 @@
 </script>
 
 <script id="evento-tpl" type="text/template">
-    <header class="bar bar-nav">
+    <div class="header">
         <a onclick="navigator.app.exitApp();" class="btn btn-link btn-nav pull-left" href="#">
             <span class="icon icon-left-nav"></span>
         </a>
@@ -51,31 +48,29 @@
         <a id="salir" class="btn btn-link btn-nav pull-right" href="#">
             <span class="icon icon-close"></span>
         </a>
-    </header>
-    <div class="content">
-        <div class="container evento-detalle">
-            <div class="row cuadro">
-                <div class="col-xs-12">
-                    <h4 class="animated fadeInUpBig"><i class="fa fa-music"></i> {{title}}</h4>
-                </div>
-                <div class="col-xs-12 col-sm-5 col-lg-6">
-                    <a href="#" ><img src="http://test.mepwebs.com/uploads/medias/{{image}}" class="img-responsive" /></a>
-                </div>
-                <div class="col-xs-12 col-sm-7 col-lg-6">
-                    <div class="date">
-                        <span class="dia">{{fecha_dm.diasemana}} </span>
-                        <span><b>{{fecha_dm.dia}}</b> {{fecha_dm.mes}} </span>
-                        <span class="hora"><i class="fa fa-clock-o"></i> {{hora_format}} h</span>
-                    </div>
-                    <div class="datos-evento">
-                        <p>{{Eventor.first_name}}</p><p>{{Ciudad.nombre}}</p>
-                        <p>{{precio}}</p>
-                    </div>
-                    <div class="descr-evento">
-                        {{{descripcion}}}
-                    </div>
-                </div>   
+    </div>
+    <div class="container evento-detalle">
+        <div class="row cuadro">
+            <div class="col-xs-12">
+                <h4 class="animated fadeInUpBig"><i class="fa fa-music"></i> {{title}}</h4>
             </div>
+            <div class="col-xs-12 col-sm-5 col-lg-6">
+                <a href="#" ><img src="http://test.mepwebs.com/uploads/medias/{{image}}" class="img-responsive" /></a>
+            </div>
+            <div class="col-xs-12 col-sm-7 col-lg-6">
+                <div class="date">
+                    <span class="dia">{{fecha_dm.diasemana}} </span>
+                    <span><b>{{fecha_dm.dia}}</b> {{fecha_dm.mes}} </span>
+                    <span class="hora"><i class="fa fa-clock-o"></i> {{hora_format}} h</span>
+                </div>
+                <div class="datos-evento">
+                    <p>{{Eventor.first_name}}</p><p>{{Ciudad.nombre}}</p>
+                    <p>{{precio}}</p>
+                </div>
+                <div class="descr-evento">
+                    {{{descripcion}}}
+                </div>
+            </div>   
         </div>
     </div>
 </script>
