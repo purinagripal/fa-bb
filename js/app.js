@@ -15,6 +15,7 @@
 
         routes: {
             "":             "home",
+            "categ/:id_cat":    "categoria",
             "eventos/:id":  "eventoDetails"
         },
 
@@ -29,6 +30,27 @@
                 homeView.delegateEvents(); // delegate events when the view is recycled
             }
             slider.slidePage(homeView.$el);
+        },
+        
+        categoria: function (id_cat) {
+            
+            if (id_cat == 0) {
+                // todas las categorías, vuelve a mostrar la lista inicial
+                this.eventosCateg = this.eventosList;
+                //homeView.$('#dropdownMenu1').text('Todas <span class="caret"></span>');
+            } else {
+                // coge el evento de la coleccion del HOME y crea una nueva coleccion con ese array
+                this.eventosCateg = new EventoCollection(this.eventosList.where({id_categoria: id_cat}));
+                //homeView.$('#dropdownMenu1').text('Música <span class="caret"></span>');
+            }
+            
+            console.log("imprime listacategoria");
+            console.log(id_cat);
+            console.log(this.eventosCateg);
+            //console.log(JSON.stringify(this.eventosCateg));
+            
+            homeView.model = this.eventosCateg;
+            homeView.render(id_cat);
         },
 
         eventoDetails: function (id) {

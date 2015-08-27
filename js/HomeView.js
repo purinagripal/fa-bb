@@ -21,12 +21,30 @@ var HomeView = Backbone.View.extend({
         this.model.fetch({reset:true});
     },
 
-    render:function (eventName) {
+    render:function (id_cat) {
         console.log('render de homeView');
-        console.log(JSON.stringify(this.model.models));
-        
+        //console.log(JSON.stringify(this.model.models));
+        console.log(this.model);
+        console.log(id_cat);
+                
         this.$el.html(this.template());
-
+           
+        var categ_txt;
+        switch(id_cat) {
+            case '1':
+                categ_txt = 'Música';
+                break;
+            case '4':
+                categ_txt = 'Talleres';
+                break;
+            case '5':
+                categ_txt = 'Charlas';
+                break;
+            default:
+                categ_txt = 'Categoría';
+        }
+        this.$('#dropdownMenu1').html(categ_txt+' <span class="caret"></span>');
+        
         _.each(this.model.models, 
                function (evento) {$('.container', this.el).append(new EventoListItemView({model: evento}).render().el);}, 
                this);

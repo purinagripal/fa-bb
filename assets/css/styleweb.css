@@ -33,7 +33,9 @@ a:hover{color:#fff;text-decoration:none}
 
 /* ********* */
 /* APP MOVIL */
-h1{font-size:1.5em;}
+/* ********* */
+
+/* header fijo */
 .header {
     position: absolute;
     top: 0;
@@ -41,6 +43,7 @@ h1{font-size:1.5em;}
     height: 50px;
     width: 100%;
     border-bottom: solid 1px #666;
+    padding: 12px;
 }
 .container {
     position: absolute;
@@ -50,6 +53,19 @@ h1{font-size:1.5em;}
     overflow: scroll;
     -webkit-overflow-scrolling: touch;
 }
+/* fin header fijo */
+
+h1.menu_title {
+    display: inline;
+    font-size:1.5em;
+}
+div.menu_drop {
+    display: inline;
+}
+a.menu_salir {
+    display: inline;
+}
+/* ************* */
 /* FIN APP MOVIL */
 /* ************* */
 

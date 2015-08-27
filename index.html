@@ -12,8 +12,19 @@
 
 <script id="home-tpl" type="text/template">
     <div class="header">
-        <h1 class="title">Fuerte Agenda</h1>
-        <a id="salir" onclick="navigator.app.exitApp();" class="btn btn-link btn-nav pull-right" href="#">
+        <h1 class="menu_title">Fuerte Agenda</h1>
+        <div class="dropdown menu_drop">
+          <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            Categoría <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+            <li><a href="#categ/1">Música</a></li>
+            <li><a href="#categ/4">Talleres</a></li>
+            <li><a href="#categ/5">Charlas</a></li>
+            <li><a href="#categ/0">Todas</a></li>
+          </ul>
+        </div>
+        <a id="salir" onclick="navigator.app.exitApp();" class="menu_salir" href="#">
             salir
         </a>
     </div>
@@ -78,6 +89,7 @@
     
 <script src="cordova.js"></script>
     
+
 <script src="lib/fastclick.js"></script>
 <script src="lib/handlebars.js"></script>
 <script src="lib/jquery.js"></script>
@@ -85,6 +97,7 @@
 <script src="lib/backbone.js"></script>
 <script src="lib/pageslider.js"></script>
 <script src="lib/iscroll.js"></script>
+<script src="lib/bootstrap.js"></script>
     
 <script src="js/models.js"></script>
 <script src="js/HomeView.js"></script>
