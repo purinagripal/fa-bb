@@ -14,9 +14,10 @@
     var AppRouter = Backbone.Router.extend({
 
         routes: {
-            "":             "home",
+            "":                 "home",
             "categ/:id_cat":    "categoria",
-            "eventos/:id":  "eventoDetails"
+            "zona/:id_ciudad":  "ciudad",
+            "eventos/:id":      "eventoDetails"
         },
 
         home: function () {
@@ -34,23 +35,68 @@
         
         categoria: function (id_cat) {
             
-            if (id_cat == 0) {
-                // todas las categorías, vuelve a mostrar la lista inicial
-                this.eventosCateg = this.eventosList;
-                //homeView.$('#dropdownMenu1').text('Todas <span class="caret"></span>');
+            homeView.categoria = id_cat;
+            
+            console.log('categ: '+homeView.categoria);
+            console.log('ciudad: '+homeView.ciudad);
+            
+            if (homeView.categoria == 0) {
+                if( homeView.ciudad != 0 ) {
+                    // filtra solo x por ciudad
+                    this.eventosCateg = new EventoCollection(this.eventosList.where({id_ciudad: homeView.ciudad}));
+                } else {
+                    // coge todas las categorías, vuelve a mostrar la lista inicial
+                    this.eventosCateg = this.eventosList;
+                }
             } else {
-                // coge el evento de la coleccion del HOME y crea una nueva coleccion con ese array
-                this.eventosCateg = new EventoCollection(this.eventosList.where({id_categoria: id_cat}));
-                //homeView.$('#dropdownMenu1').text('Música <span class="caret"></span>');
+                if( homeView.ciudad != 0 ) {
+                    // filtra x categoria y x ciudad
+                    this.eventosCateg = new EventoCollection(this.eventosList.where({id_categoria: homeView.categoria, id_ciudad: homeView.ciudad}));
+                } else {
+                    // filtra solo x categoria
+                    this.eventosCateg = new EventoCollection(this.eventosList.where({id_categoria: homeView.categoria}));
+                }
             }
             
             console.log("imprime listacategoria");
-            console.log(id_cat);
             console.log(this.eventosCateg);
             //console.log(JSON.stringify(this.eventosCateg));
             
             homeView.model = this.eventosCateg;
-            homeView.render(id_cat);
+            homeView.render();
+        },
+        
+        ciudad: function (id_ciudad) {
+            
+            homeView.ciudad = id_ciudad;
+            
+            console.log('categ: '+homeView.categoria);
+            console.log('ciudad: '+homeView.ciudad);
+            
+            if (homeView.categoria == 0) {
+                if( homeView.ciudad != 0 ) {
+                    // filtra solo x por ciudad
+                    this.eventosCiudad = new EventoCollection(this.eventosList.where({id_ciudad: homeView.ciudad}));
+                } else {
+                    // coge todas las categorías, vuelve a mostrar la lista inicial
+                    this.eventosCiudad = this.eventosList;
+                }
+            } else {
+                if( homeView.ciudad != 0 ) {
+                    // filtra x categoria y x ciudad
+                    this.eventosCiudad = new EventoCollection(this.eventosList.where({id_categoria: homeView.categoria, id_ciudad: homeView.ciudad}));
+                } else {
+                    // filtra solo x categoria
+                    this.eventosCiudad = new EventoCollection(this.eventosList.where({id_categoria: homeView.categoria}));
+                }
+            }
+            
+            console.log("imprime listaciudad");
+            console.log(this.eventosCiudad);
+            //console.log(JSON.stringify(this.eventosCateg));
+            
+            homeView.model = this.eventosCiudad;
+            homeView.render();
         },
 
         eventoDetails: function (id) {

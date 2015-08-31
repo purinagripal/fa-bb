@@ -17,20 +17,20 @@ var HomeView = Backbone.View.extend({
     
     initialize:function () {
         console.log('initialize de homeView');
+        this.categoria = 0;
+        this.ciudad = 0;
         this.model.bind("reset", this.render, this);
         this.model.fetch({reset:true});
     },
 
-    render:function (id_cat) {
+    render:function () {
         console.log('render de homeView');
-        //console.log(JSON.stringify(this.model.models));
-        console.log(this.model);
-        console.log(id_cat);
                 
         this.$el.html(this.template());
            
+        // boton categoria
         var categ_txt;
-        switch(id_cat) {
+        switch(this.categoria) {
             case '1':
                 categ_txt = 'Música';
                 break;
@@ -43,7 +43,21 @@ var HomeView = Backbone.View.extend({
             default:
                 categ_txt = 'Categoría';
         }
-        this.$('#dropdownMenu1').html(categ_txt+' <span class="caret"></span>');
+        this.$('#dropdownMenuCateg').html(categ_txt+' <span class="caret"></span>');
+        
+        // boton ciudad
+        var ciudad_txt;
+        switch(this.ciudad) {
+            case '1':
+                ciudad_txt = 'Lajares';
+                break;
+            case '2':
+                ciudad_txt = 'Corralejo';
+                break;
+            default:
+                ciudad_txt = 'Ciudad';
+        }
+        this.$('#dropdownMenuCiudad').html(ciudad_txt+' <span class="caret"></span>');
         
         _.each(this.model.models, 
                function (evento) {$('.container', this.el).append(new EventoListItemView({model: evento}).render().el);}, 
