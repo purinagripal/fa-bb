@@ -22,7 +22,7 @@ var HomeView = Backbone.View.extend({
         this.model.bind("reset", this.render, this);
         this.model.fetch({reset:true});
         // esconde el splashscreen una vez tiene los datos
-        navigator.splashscreen.hide();
+        //navigator.splashscreen.hide();
     },
 
     render:function () {
