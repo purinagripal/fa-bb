@@ -136,6 +136,10 @@
         console.log('addEventListener se ejecutó');
         console.log(navigator);
         
+        // Now safe to use device APIs
+        setTimeout(function() {
+            navigator.splashscreen.hide();
+        }, 2000);
     }
     
 
