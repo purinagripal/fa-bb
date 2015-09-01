@@ -112,11 +112,16 @@
     Backbone.history.start();
 
     /* --------------------------------- Event Registration -------------------------------- */
-    document.addEventListener('deviceready', function () {
+    document.addEventListener("deviceready", onDeviceReady, false);
+    
+    // PhoneGap esta listo y ahora ya se pueden hacer llamadas a PhoneGap
+    //
+    function onDeviceReady() {
         // boton salir
         //document.getElementById('salir').addEventListener('click', function(){navigator.app.exitApp();});
         
         FastClick.attach(document.body);
+        
         if (navigator.notification) { // Override default HTML alert with native dialog
             window.alert = function (message) {
                 navigator.notification.alert(
@@ -127,8 +132,15 @@
                 );
             };
         }
-                  
-    }, false);
+        
+        console.log('addEventListener se ejecutó');
+        console.log(navigator);
+        
+        // Ahora es seguro usar la API PhoneGap
+        navigator.notification.alert("Hello");
+    }
+    
+    
 
     /* ---------------------------------- Local Functions ---------------------------------- */
 

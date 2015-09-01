@@ -21,7 +21,7 @@ var HomeView = Backbone.View.extend({
         this.ciudad = 0;
         this.model.bind("reset", this.render, this);
         this.model.fetch({reset:true});
-        // esconde el splashscreen una vez tiene los datos
+        // ocultar pantalla presentacion cuando se cargue la lista
         //navigator.splashscreen.hide();
     },
 
