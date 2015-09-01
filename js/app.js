@@ -136,10 +136,7 @@
         console.log('addEventListener se ejecutó');
         console.log(navigator);
         
-        // Ahora es seguro usar la API PhoneGap
-        navigator.notification.alert("Hello");
     }
-    
     
 
     /* ---------------------------------- Local Functions ---------------------------------- */
