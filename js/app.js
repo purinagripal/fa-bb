@@ -115,12 +115,15 @@
     document.addEventListener("deviceready", onDeviceReady, false);
     
     // PhoneGap esta listo y ahora ya se pueden hacer llamadas a PhoneGap
-    //
     function onDeviceReady() {
         // boton salir
         //document.getElementById('salir').addEventListener('click', function(){navigator.app.exitApp();});
         
         FastClick.attach(document.body);
+        
+        $('.menu_salir').on('click', function() {
+            navigator.app.exitApp();
+        });
         
         if (navigator.notification) { // Override default HTML alert with native dialog
             window.alert = function (message) {
@@ -139,7 +142,7 @@
         // Now safe to use device APIs
         setTimeout(function() {
             navigator.splashscreen.hide();
-        }, 2000);
+        }, 5000);
     }
     
 
