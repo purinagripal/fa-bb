@@ -20,7 +20,12 @@ var HomeView = Backbone.View.extend({
         this.categoria = 0;
         this.ciudad = 0;
         this.model.bind("reset", this.render, this);
-        this.model.fetch({reset:true});
+        this.model.fetch({reset: true, 
+                          success: function() {
+                            console.log( 'fetch terminado, esconde splashscreen' );
+                            navigator.splashscreen.hide();
+                          }
+        });
         // ocultar pantalla presentacion cuando se cargue la lista
         //navigator.splashscreen.hide();
     },
@@ -60,28 +65,20 @@ var HomeView = Backbone.View.extend({
                 ciudad_txt = 'Ciudad';
         }
         this.$('#dropdownMenuCiudad').html(ciudad_txt+' <span class="caret"></span>');
-        
+                
         _.each(this.model.models, 
                function (evento) {$('.container', this.el).append(new EventoListItemView({model: evento}).render().el);}, 
                this);
         return this;
+    },
+
+    events: {
+        "click .menu_salir": "salir"
+    },
+
+    salir: function (event) {
+        console.log("SALIR");
+        navigator.app.exitApp();
     }
-
-    /*events: {
-        "keyup .search-key":    "search",
-        "keypress .search-key": "onkeypress"
-    },
-
-    search: function (event) {
-        var key = $('.search-key').val();
-        console.log(key);
-        this.eventos.fetch({reset: true, data: {name: key}});
-    },
-
-    onkeypress: function (event) {
-        if (event.keyCode === 13) { // enter key pressed
-            event.preventDefault();
-        }
-    }*/
 
 });

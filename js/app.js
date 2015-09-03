@@ -112,18 +112,17 @@
     Backbone.history.start();
 
     /* --------------------------------- Event Registration -------------------------------- */
+
+    $(document).ready( function() { console.log("document ready"); });
+    
     document.addEventListener("deviceready", onDeviceReady, false);
     
     // PhoneGap esta listo y ahora ya se pueden hacer llamadas a PhoneGap
     function onDeviceReady() {
-        // boton salir
-        //document.getElementById('salir').addEventListener('click', function(){navigator.app.exitApp();});
+        console.log('onDeviceReady se ejecutó');
+        console.log(navigator);
         
         FastClick.attach(document.body);
-        
-        $('.menu_salir').on('click', function() {
-            navigator.app.exitApp();
-        });
         
         if (navigator.notification) { // Override default HTML alert with native dialog
             window.alert = function (message) {
@@ -136,14 +135,13 @@
             };
         }
         
-        console.log('addEventListener se ejecutó');
-        console.log(navigator);
-        
         // Now safe to use device APIs
-        setTimeout(function() {
+        /*setTimeout(function() {
             navigator.splashscreen.hide();
-        }, 5000);
+        }, 5000);*/
     }
+    
+    
     
 
     /* ---------------------------------- Local Functions ---------------------------------- */
