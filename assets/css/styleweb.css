@@ -46,7 +46,8 @@ a:hover{color:#fff;text-decoration:none}
     padding: 10px;
 }
 .header img {
-    
+    vertical-align: bottom;
+    margin-right: 10px;
 }
 .guiaeventos {
     position: absolute;
@@ -107,7 +108,7 @@ a.menu_salir {
 
 /* guiaeventos --- en INDEX (proximos eventos), en AGENDA y en otros eventos EVENTO */
 .guiaeventos h4 {border-bottom: 1px solid;}
-.guiaeventos .cuadro {background-color: #222; margin: 0 0.1em 0.7em;}
+.guiaeventos .cuadro {background-color: #222; margin: 0 0.1em 0.5em;}
 .guiaeventos .cuadro img {margin-bottom: 0.9em;}
 .guiaeventos .cuadro h5 {margin: 0.5em 0;}
 .guiaeventos .cuadro p {margin: 0.6em 0; font-size: 1.12em; line-height: 1;}

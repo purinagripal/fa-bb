@@ -12,48 +12,55 @@
 
 <script id="home-tpl" type="text/template">
     <div class="header">
-        <div class="col-xs-3">
-            <img src="icon.png" class="img-responsive" />
+        <div class="head_sup">
+            <img src="logo.png" /> <h1 class="menu_title">Fuerte Agenda</h1>
+            <a class="menu_salir pull-right"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
         </div>
-        <div class="col-xs-9">
-            <div class="head_sup">
-                <h1 class="menu_title">Fuerte Agenda</h1>
-                <a class="menu_salir pull-right"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
-                <!--<button class="btn btn-default " type="button">salir</button>-->
+        <div class="head_inf">
+            <div class="dropdown menu_drop pull-right">
+                <a class="dropdown-toggle" id="dropdownMenuCateg" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    Categoría <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuCateg">
+                    <li><a href="#categ/1">Música</a></li>
+                    <li><a href="#categ/4">Talleres</a></li>
+                    <li><a href="#categ/5">Charlas</a></li>
+                    <li><a href="#categ/0">Todas</a></li>
+                </ul>
             </div>
-            <div class="head_inf">
-                <div class="dropdown menu_drop pull-right">
-                    <a class="dropdown-toggle" id="dropdownMenuCateg" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                        Categoría <span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuCateg">
-                        <li><a href="#categ/1">Música</a></li>
-                        <li><a href="#categ/4">Talleres</a></li>
-                        <li><a href="#categ/5">Charlas</a></li>
-                        <li><a href="#categ/0">Todas</a></li>
-                    </ul>
-                </div>
-                <div class="dropdown menu_drop pull-right">
-                  <a class="dropdown-toggle" id="dropdownMenuCiudad" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                    Ciudad <span class="caret"></span>
-                  </a>
-                  <ul class="dropdown-menu" aria-labelledby="dropdownMenuCiudad">
-                    <li><a href="#zona/1">Lajares</a></li>
-                    <li><a href="#zona/2">Corralejo</a></li>
-                    <li><a href="#zona/0">Todas</a></li>
-                  </ul>
-                </div>
-                <div class="clearfix"></div>
+            <div class="dropdown menu_drop pull-right">
+              <a class="dropdown-toggle" id="dropdownMenuCiudad" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                Ciudad <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuCiudad">
+                <li><a href="#zona/1">Lajares</a></li>
+                <li><a href="#zona/2">Corralejo</a></li>
+                <li><a href="#zona/0">Todas</a></li>
+              </ul>
             </div>
+            <div class="clearfix"></div>
         </div>
     </div>
-    <div class="container guiaeventos">
+    <div class="container-fluid guiaeventos">
 
     </div>
 </script>
 
 <script id="eventos-list-tpl" type="text/template">
-        <div class="row cuadro">
+        <div class="row cuadro" onclick="location.href='#eventos/{{id_evento}}'">
+            <div class="col-xs-9">
+                
+                <h5><a href="#eventos/{{id_evento}}" >{{title}}</a></h5>
+                <div class="row">
+                    <div class="col-xs-5">
+                        <a href="#eventos/{{id_evento}}" ><img src="http://test.mepwebs.com/uploads/medias/{{image}}" class="img-responsive" /></a>
+                    </div>
+                    <div class="col-xs-7">
+                        <p>{{Eventor.first_name}}</p><p>{{Ciudad.nombre}}</p>
+                    </div>
+                </div>
+            </div>
+            <!--
             <div class="col-xs-4">
                 <a href="#eventos/{{id_evento}}" ><img src="http://test.mepwebs.com/uploads/medias/{{image}}" class="img-responsive" /></a>
             </div>
@@ -61,6 +68,7 @@
                 <h5><a href="#eventos/{{id_evento}}" >{{title}}</a></h5>
                 <p>{{Eventor.first_name}}</p><p>{{Ciudad.nombre}}</p>
             </div>
+            -->
             <div class="col-xs-3 date">
                 <span class="dia">{{fecha_dm.diasemana}}</span>
                 <span><b>{{fecha_dm.dia}}</b> {{fecha_dm.mes}}</span>

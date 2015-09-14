@@ -70,7 +70,7 @@ var HomeView = Backbone.View.extend({
         this.$('#dropdownMenuCiudad').html(ciudad_txt+' <span class="caret"></span>');
                 
         _.each(this.model.models, 
-               function (evento) {$('.container', this.el).append(new EventoListItemView({model: evento}).render().el);}, 
+               function (evento) {$('.guiaeventos', this.el).append(new EventoListItemView({model: evento}).render().el);}, 
                this);
         return this;
     },
