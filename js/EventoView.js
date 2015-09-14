@@ -10,7 +10,7 @@ var EventoView = Backbone.View.extend({
     },
     
     events: {
-        "click .menu_salir": "salir"
+//        "click .menu_salir": "salir"
     },
 
     salir: function (event) {

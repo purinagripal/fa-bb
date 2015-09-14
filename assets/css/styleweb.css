@@ -40,14 +40,17 @@ a:hover{color:#fff;text-decoration:none}
     position: absolute;
     top: 0;
     left: 0;
-    height: 50px;
+    height: 90px;
     width: 100%;
     border-bottom: solid 1px #666;
-    padding: 12px;
+    padding: 10px;
 }
-.container {
+.header img {
+    
+}
+.guiaeventos {
     position: absolute;
-    top: 50px;
+    top: 90px;
     bottom: 0;
     width: 100%;
     overflow: scroll;
@@ -57,10 +60,15 @@ a:hover{color:#fff;text-decoration:none}
 
 h1.menu_title {
     display: inline;
-    font-size:1em;
+    font-size:1.1em;
+}
+.header .head_inf {
+    padding-top: 5px;
 }
 div.menu_drop {
     display: inline;
+    margin: 3px;
+    margin-left: 25px;
 }
 a.menu_salir {
     display: inline;

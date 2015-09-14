@@ -19,15 +19,18 @@ var HomeView = Backbone.View.extend({
         console.log('initialize de homeView');
         this.categoria = 0;
         this.ciudad = 0;
-        this.model.bind("reset", this.render, this);
+        // this.model.bind("reset", this.render, this);
+        this.model.on("reset", this.render, this);
         this.model.fetch({reset: true, 
                           success: function() {
                             console.log( 'fetch terminado, esconde splashscreen' );
-                            navigator.splashscreen.hide();
+                            // // ocultar pantalla presentacion 
+                            setTimeout(function() {
+                                navigator.splashscreen.hide();
+                            }, 1500);
+                            //navigator.splashscreen.hide();
                           }
         });
-        // ocultar pantalla presentacion cuando se cargue la lista
-        //navigator.splashscreen.hide();
     },
 
     render:function () {
