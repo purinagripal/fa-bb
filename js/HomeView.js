@@ -1,20 +1,5 @@
 var HomeView = Backbone.View.extend({
 
-    /*initialize: function () {
-        this.eventos = this.model;
-        console.log("eventos al inicio HomeView");
-        //console.log(this.eventos);
-        this.eventos.fetch({reset:true});
-        this.listView = new EventoListView({collection: this.eventos});
-        
-    },
-    
-    render: function () {
-        this.$el.html(this.template());
-        $('.content', this.el).append(this.listView.render().el);
-        return this;
-    },*/
-    
     initialize:function () {
         console.log('initialize de homeView');
         this.categoria = 0;
@@ -76,7 +61,15 @@ var HomeView = Backbone.View.extend({
     },
 
     events: {
-        "click .menu_salir": "salir"
+        "click .menu_salir": "salir",
+        "click .cuadro": "ver_evento"
+    },
+    
+    ver_evento: function (event) {
+        console.log("ver evento");
+        console.log(event);
+        Backbone.history.navigate('eventos/5', {trigger: true});
+        //router.navigate('eventos/{{id_evento}}', {trigger: true});
     },
 
     salir: function (event) {

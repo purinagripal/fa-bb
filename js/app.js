@@ -4,12 +4,14 @@
     HomeView.prototype.template = Handlebars.compile($("#home-tpl").html());
     EventoListItemView.prototype.template = Handlebars.compile($("#eventos-list-tpl").html());
     EventoView.prototype.template = Handlebars.compile($("#evento-tpl").html());
+    LocalesView.prototype.template = Handlebars.compile($("#locales-tpl").html());
 
     /* ---------------------------------- Local Variables ---------------------------------- */
     var slider = new PageSlider($('body'));
     
 
     var homeView;
+    var localesView;
 
     var AppRouter = Backbone.Router.extend({
 
@@ -17,7 +19,8 @@
             "":                 "home",
             "categ/:id_cat":    "categoria",
             "zona/:id_ciudad":  "ciudad",
-            "eventos/:id":      "eventoDetails"
+            "eventos/:id":      "eventoDetails",
+            "locales":          "locales"
         },
 
         home: function () {
@@ -104,6 +107,20 @@
             // coge el evento de la coleccion del HOME
             this.evento = this.eventosList.get(id);
             slider.slidePage(new EventoView({model: this.evento}).render().$el);
+        },
+        
+        locales: function () {
+            // Since the home view never changes, we instantiate it and render it only once
+            if (!localesView) {
+                this.localesList = this.eventosList.obtenerLocales();
+                console.log(this.localesList);
+                localesView = new LocalesView({model: this.localesList});
+                //homeView.render();
+            } else {
+                console.log('reusing locales view');
+                localesView.delegateEvents(); // delegate events when the view is recycled
+            }
+            slider.slidePage(localesView.$el);
         }
         
     });

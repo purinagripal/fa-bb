@@ -40,18 +40,14 @@ a:hover{color:#fff;text-decoration:none}
     position: absolute;
     top: 0;
     left: 0;
-    height: 90px;
+    height: 80px;
     width: 100%;
     border-bottom: solid 1px #666;
     padding: 10px;
 }
-.header img {
-    vertical-align: bottom;
-    margin-right: 10px;
-}
 .guiaeventos {
     position: absolute;
-    top: 90px;
+    top: 80px;
     bottom: 0;
     width: 100%;
     overflow: scroll;
@@ -59,37 +55,40 @@ a:hover{color:#fff;text-decoration:none}
 }
 /* fin header fijo */
 
-h1.menu_title {
-    display: inline;
-    font-size:1.1em;
+/* estilos header */
+.header .head_sup {
+    text-align: center;
 }
-.header .head_inf {
-    padding-top: 5px;
+.header img {
+    vertical-align: bottom;
+    margin-right: 10px;
 }
-div.menu_drop {
+.head_sup h1 {
     display: inline;
-    margin: 3px;
-    margin-left: 25px;
+    font-size:1.4em;
+}
+
+.menu_drop {
+    display: inline;
 }
 a.menu_salir {
     display: inline;
 }
+
+.header .head_inf {
+    padding-top: 5px;
+}
+.selec_drop {
+    display: inline;
+    margin: 3px;
+    margin-left: 25px;
+}
+/* fin estilos header */
+
 /* ************* */
 /* FIN APP MOVIL */
 /* ************* */
 
-/* barra menu nav */
-.navbar-brand{padding: 0.6em 0;}
-.navbar-nav > li > a {font-size: 1em; font-weight: bold; margin-top: 1em;}
-.navbar-inverse{background: #000;border:none;}
-/* colores de los enlaces */
-.navbar-inverse .navbar-nav > li > a {color: #ccc;}
-.navbar-inverse .navbar-nav > li > a:hover,
-.navbar-inverse .navbar-nav > li > a:focus { color: #f2ab00; background-color: transparent; }
-.navbar-inverse .navbar-nav > .active > a,
-.navbar-inverse .navbar-nav > .active > a:hover,
-.navbar-inverse .navbar-nav > .active > a:focus { color: #f2ab00; background-color: transparent;}
-/* barra menu nav */
 
 
 /* home --- en INDEX */
@@ -98,12 +97,6 @@ a.menu_salir {
 .fronttext p {margin:0; margin-top: 1em; background-color: rgba(0,0,0,0.7);display: inline-block;padding: 0.6em;}
 .homeinfo .publi {position: relative;}
 /* home  --- en INDEX */
-
-
-/* proximos eventos + noticias --- en INDEX */
-.prox-eventos-noticias {color: #ddd;}
-.prox-eventos-noticias ul{padding: 0; list-style: none; margin-top: 2.2em;}
-
 
 
 /* guiaeventos --- en INDEX (proximos eventos), en AGENDA y en otros eventos EVENTO */
@@ -121,19 +114,6 @@ a.menu_salir {
 .guiaeventos .cuadro .date span{font-size: 1.25em;}*/
 /* guiaeventos --- en INDEX, AGENDA y EVENTO */
 
-.noticias ul li {margin-bottom: 1.4em;}
-.noticias ul li p {font-size: 0.8em; margin: 0;}
-.noticias ul li img {float: left; margin-right: 1.25em;}
-.noticias ul li .blogtext{overflow: hidden;}
-/* proximos eventos +  noticias --- en INDEX */
-
-/* guia de eventos por categoria --- en INDEX */
-.g-eventos-categ {margin-bottom: 1em;}
-.g-eventos-categ .caja {background-color: #222; margin-bottom: 2em;}
-.g-eventos-categ .caja .texto-caja{padding: 0.5em;}
-.g-eventos-categ .caja .texto-caja h5{}
-.g-eventos-categ .caja .texto-caja a{font-size:0.8em; float: right;}
-/* guia de eventos por categoria --- en INDEX */
 
 /* contacto --- en INDEX */
 .contactform {margin-bottom: 1.5em;}
@@ -162,30 +142,7 @@ a.menu_salir {
 .mapa-google { width: 100%; height: 18em; border:0; margin: 0 auto 1.5em;}
 /* evento-detalle --- en EVENTO */
 
-/* proximos eventos, Sidebar --- en EVENTO */
-.prox-eventos-sb h3 {font-size: 1.5em;}
-.prox-eventos-sb .cuadro {background-color: #222; margin: 0 0.1em 0.7em;}
-.prox-eventos-sb .cuadro img {margin-bottom: 0.9em;}
-.prox-eventos-sb .cuadro h5 {margin: 0.5em 0;}
-.prox-eventos-sb .cuadro p {margin: 0.6em 0; font-size: 1.12em; line-height: 1;}
-.prox-eventos-sb .cuadro .date {text-align: center; color: #aaa; padding: 0.5em 0; margin-bottom: 5px; background-color: #111;}
-.prox-eventos-sb .cuadro .date span {display: block; font-size: 1.25em; line-height: 1.2;}
-.prox-eventos-sb .cuadro .date span.dia { font-size: 1.1em; padding-bottom: 0.5em; }
-.prox-eventos-sb .cuadro .date b {font-size: 1.6em;}
-.prox-eventos-sb .cuadro .date span.hora {font-size: 1.5em; line-height: 1.8;}
-/* proximos eventos, Sidebar --- en EVENTO */
 
-
-#footer{background-color: #000; padding: 0.6em 0; color: #fff; font-size: 0.8em; color: #aaa; margin-top: 3em; z-index: 100; position: relative;}
-
-
-
-
-
-/*animation - revisar */ 
-.blockblack, #publica, .caja, .prox-eventos-noticias ul li, h3, h4, .guiaeventos .cuadrooculto, .prox-eventos-sb .cuadrooculto {visibility: hidden;}
-.animated{visibility: visible !important;}
-/*animation*/
 
 
 
