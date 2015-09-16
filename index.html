@@ -32,10 +32,15 @@
                     Categoría <span class="caret"></span>
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuCateg">
-                    <li><a href="#categ/1">Música</a></li>
+                    <li><a class="filt_categ" data-id="1">Música</a></li>
+                    <li><a class="filt_categ" data-id="4">Talleres</a></li>
+                    <li><a class="filt_categ" data-id="5">Charlas</a></li>
+                    <li><a class="filt_categ" data-id="0">Todas</a></li>
+                    <!--
                     <li><a href="#categ/4">Talleres</a></li>
                     <li><a href="#categ/5">Charlas</a></li>
                     <li><a href="#categ/0">Todas</a></li>
+                    -->
                 </ul>
             </div>
             <div class="dropdown selec_drop pull-right">
@@ -43,9 +48,9 @@
                 Ciudad <span class="caret"></span>
               </a>
               <ul class="dropdown-menu" aria-labelledby="dropdownMenuCiudad">
-                <li><a href="#zona/1">Lajares</a></li>
-                <li><a href="#zona/2">Corralejo</a></li>
-                <li><a href="#zona/0">Todas</a></li>
+                <li><a class="filt_zona" data-id="1">Lajares</a></li>
+                <li><a class="filt_zona" data-id="2">Corralejo</a></li>
+                <li><a class="filt_zona" data-id="0">Todas</a></li>
               </ul>
             </div>
             <div class="clearfix"></div>
@@ -58,7 +63,7 @@
 
 <script id="eventos-list-tpl" type="text/template">
         <!--<div class="row cuadro" onclick="location.href='#eventos/{{id_evento}}'">-->
-        <div class="row cuadro" id="{{id_evento}}" >
+        <div class="row cuadro" data-id="{{id_evento}}" >
             <div class="col-xs-9">                
                 <h5><a href="#eventos/{{id_evento}}" >{{title}}</a></h5>
                 <div class="row">

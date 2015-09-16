@@ -62,14 +62,30 @@ var HomeView = Backbone.View.extend({
 
     events: {
         "click .menu_salir": "salir",
-        "click .cuadro": "ver_evento"
+        "click .cuadro": "ver_evento",
+        "click .filt_categ": "filtra_categoria",
+        "click .filt_zona": "filtra_ciudad"
+    },
+    
+    filtra_categoria: function (event) {
+        var id_cat = $(event.currentTarget).attr('data-id'); 
+        console.log('id de categoria'+id_cat);
+        Backbone.history.navigate('categ/'+id_cat, {trigger: true});
+        Backbone.history.navigate('', {replace: true});
+    },
+    
+    filtra_ciudad: function (event) {
+        var id_ciudad = $(event.currentTarget).attr('data-id'); 
+        console.log('id de ciudad '+id_ciudad);
+        Backbone.history.navigate('zona/'+id_ciudad, {trigger: true});
+        Backbone.history.navigate('', {replace: true});
     },
     
     ver_evento: function (event) {
-        console.log("ver evento");
-        console.log(event);
-        Backbone.history.navigate('eventos/5', {trigger: true});
-        //router.navigate('eventos/{{id_evento}}', {trigger: true});
+        var id_evento = $(event.currentTarget).attr('data-id'); 
+        console.log("ver evento "+id_evento);
+        //console.log(event);
+        Backbone.history.navigate('eventos/'+id_evento, {trigger: true});
     },
 
     salir: function (event) {
