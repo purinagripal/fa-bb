@@ -76,9 +76,13 @@ var HomeView = Backbone.View.extend({
     
     filtra_ciudad: function (event) {
         var id_ciudad = $(event.currentTarget).attr('data-id'); 
-        console.log('id de ciudad '+id_ciudad);
+        console.log('id de ciudad: '+id_ciudad);
+        console.log('history antes: ');
+        console.log(window.history);
         Backbone.history.navigate('zona/'+id_ciudad, {trigger: true});
         Backbone.history.navigate('', {replace: true});
+        console.log('history despues: ');
+        console.log(window.history);
     },
     
     ver_evento: function (event) {

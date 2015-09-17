@@ -153,13 +153,17 @@
             };
         }
         
+        document.addEventListener("backbutton", onBackKeyDown, false);
+        
         // Now safe to use device APIs
         /*setTimeout(function() {
             navigator.splashscreen.hide();
         }, 5000);*/
-    }
+    };
     
-    
+    function onBackKeyDown() {
+        Backbone.history.navigate('', {trigger: true});
+    };
     
 
     /* ---------------------------------- Local Functions ---------------------------------- */
