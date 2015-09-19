@@ -9,7 +9,7 @@ var LocalView = Backbone.View.extend({
                 
         this.$el.html(this.template());
         
-        var primerEvento = this.collection.at(1);
+        var primerEvento = this.collection.at(0);
         $('.localDetails', this.el).html(new LocalDetailsView({model: primerEvento}).render().el);
                 
         _.each(this.collection.models, 

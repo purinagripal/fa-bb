@@ -130,7 +130,7 @@
         
         localDetails: function (id) {
             console.log("localDetails funcion");
-            
+            console.log(JSON.stringify(this.eventosList));
             // lista de eventos del Local
             this.eventosLocal = new EventoCollection( this.eventosList.where({id_user: id}) );
             
