@@ -20,12 +20,13 @@
     var AppRouter = Backbone.Router.extend({
 
         routes: {
-            "":                 "home",
-            "categ/:id_cat":    "categoria",
-            "zona/:id_ciudad":  "ciudad",
-            "eventos/:id":      "eventoDetails",
-            "locales":          "locales",
-            "local/:id":        "localDetails"
+            "":                     "home",
+            "categ/:id_cat":        "categoria",
+            "zona/:id_ciudad":      "ciudad",
+            "eventos/:id":          "eventoDetails",
+            "locales":              "locales",
+            "zona_loc/:id_ciudad":  "ciudadLocales",
+            "local/:id":            "localDetails"
         },
 
         home: function () {
@@ -132,6 +133,28 @@
             slider.slidePage(localesView.$el);
         },
         
+        ciudadLocales: function (id_ciudad) {
+            
+            localesView.ciudad = id_ciudad;
+            
+            console.log('ciudad: '+localesView.ciudad);
+            
+            if( localesView.ciudad != 0 ) {
+                // filtra solo x por ciudad
+                this.localesCiudad = new Backbone.Collection( this.localesList.where({id_ciudad: localesView.ciudad}) );
+            } else {
+                // coge todos los locales, vuelve a mostrar la lista inicial
+                this.localesCiudad = this.localesList;
+            }
+            
+            
+            console.log("imprime listaciudad");
+            console.log(this.localesCiudad);
+            
+            localesView.model = this.localesCiudad;
+            localesView.render();
+        },
+        
         localDetails: function (id) {
             console.log("localDetails funcion");
             console.log(JSON.stringify(this.eventosList));
@@ -140,7 +163,7 @@
             
             $("html,body").scrollTop(0);
             slider.slidePage(new LocalView({collection: this.eventosLocal}).render().$el);
-        },
+        }
         
     });
 
