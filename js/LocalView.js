@@ -19,7 +19,7 @@ var LocalView = Backbone.View.extend({
     },
 
     events: {
-        "click .container-fluid.guiaeventos.eventoslocal .row.cuadro": "l_ver_evento"
+        "click .guiaeventos.eventoslocal .cuadro": "l_ver_evento"
     },
     
     l_ver_evento: function (event) {
