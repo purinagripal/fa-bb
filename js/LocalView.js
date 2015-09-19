@@ -19,14 +19,14 @@ var LocalView = Backbone.View.extend({
     },
 
     events: {
-        "click .cuadro": "lo_ver_evento"
-    },
+        //"click .cuadro": "lo_ver_evento"
+    }
     
-    lo_ver_evento: function (event) {
+   /* lo_ver_evento: function (event) {
         var id_evento = $(event.currentTarget).attr('data-id'); 
         console.log("ver evento dsd local "+id_evento);
         //console.log(event);
         Backbone.history.navigate('eventos/'+id_evento, {trigger: true});
-    }
+    }*/
 
 });
