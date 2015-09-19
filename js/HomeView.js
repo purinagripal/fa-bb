@@ -61,7 +61,7 @@ var HomeView = Backbone.View.extend({
 
     events: {
         "click .menu_salir": "salir",
-        "click .cuadro": "ver_evento",
+        "click .row.cuadro": "ver_evento",
         "click .filt_categ": "filtra_categoria",
         "click .filt_zona": "filtra_ciudad"
     },
