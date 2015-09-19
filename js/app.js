@@ -111,6 +111,8 @@
             //var employee = new Evento({id: id});
             // coge el evento de la coleccion del HOME
             this.evento = this.eventosList.get(id);
+
+            $("html,body").scrollTop(0);
             slider.slidePage(new EventoView({model: this.evento}).render().$el);
         },
         
@@ -125,6 +127,8 @@
                 console.log('reusing locales view');
                 localesView.delegateEvents(); // delegate events when the view is recycled
             }
+            
+            $("html,body").scrollTop(0);
             slider.slidePage(localesView.$el);
         },
         
@@ -134,6 +138,7 @@
             // lista de eventos del Local
             this.eventosLocal = new EventoCollection( this.eventosList.where({id_user: id}) );
             
+            $("html,body").scrollTop(0);
             slider.slidePage(new LocalView({collection: this.eventosLocal}).render().$el);
         },
         
