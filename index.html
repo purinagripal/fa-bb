@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, height=device-height, user-scalable=no" />
 
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="assets/css/bootstrap.css" rel="stylesheet"/>
     <link href="assets/css/styleweb.css" rel="stylesheet"/>
     <link href="assets/css/pageslider.css" rel="stylesheet">
 </head>
@@ -36,11 +36,6 @@
                     <li><a class="filt_categ" data-id="4">Talleres</a></li>
                     <li><a class="filt_categ" data-id="5">Charlas</a></li>
                     <li><a class="filt_categ" data-id="0">Todas</a></li>
-                    <!--
-                    <li><a href="#categ/4">Talleres</a></li>
-                    <li><a href="#categ/5">Charlas</a></li>
-                    <li><a href="#categ/0">Todas</a></li>
-                    -->
                 </ul>
             </div>
             <div class="dropdown selec_drop pull-right">
@@ -62,7 +57,6 @@
 </script>
 
 <script id="eventos-list-tpl" type="text/template">
-        <!--<div class="row cuadro" onclick="location.href='#eventos/{{id_evento}}'">-->
         <div class="row cuadro" data-id="{{id_evento}}" >
             <div class="col-xs-9">                
                 <h5><a href="#eventos/{{id_evento}}" >{{title}}</a></h5>
@@ -87,7 +81,7 @@
     <div class="container evento-detalle">
         <div class="row cuadro">
             <div class="col-xs-12">
-                <h4 class="animated fadeInUpBig"><i class="fa fa-music"></i> {{title}}</h4>
+                <h4><i class="fa fa-music"></i> {{title}}</h4>
             </div>
             <div class="col-xs-12 col-sm-5 col-lg-6">
                 <img src="http://test.mepwebs.com/uploads/medias/{{image}}" class="img-responsive" />
@@ -95,20 +89,28 @@
             <div class="col-xs-12 col-sm-7 col-lg-6">
                 <div class="date">
                     <span class="dia">{{fecha_dm.diasemana}} </span>
-                    <span><b>{{fecha_dm.dia}}</b> {{fecha_dm.mes}} </span>
+                    <span><b>{{fecha_dm.dia}}</b> {{fecha_dm.mes}}, </span>
                     <span class="hora"><i class="fa fa-clock-o"></i> {{hora_format}} h</span>
+                    <div class="clearfix"></div>
+                    <span class="local"><a href="#local/{{Eventor.id_user}}">{{Eventor.first_name}}</a></span> <span class="ciudad">{{Ciudad.nombre}}</span>
+                    <div class="clearfix"></div>
                 </div>
                 <div class="datos-evento">
-                    <p>{{Eventor.first_name}}</p><p>{{Ciudad.nombre}}</p>
                     <p>{{precio}}</p>
+                    <p>{{horario}}</p>
+                    <p class="direc">{{direccion}}. {{Ciudad.nombre}}</p>
                 </div>
                 <div class="descr-evento">
                     {{{descripcion}}}
                 </div>
+                <div class="date local_link" data-id="{{Eventor.id_user}}">
+                    <span class="local">{{Eventor.first_name}} </span><span class="ciudad"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> info</span>
+                    <div class="clearfix"></div>
+                </div>
             </div>   
         </div>
     </div>
-</script>
+    </script>
 
 <script id="locales-tpl" type="text/template">
     <div class="header">
@@ -140,17 +142,17 @@
             <div class="clearfix"></div>
         </div>
     </div>
-    <div class="container-fluid guiaeventos">
+    <div class="container-fluid guiaeventos lista-locales">
         {{#each this}}
             <div class="row cuadro" onclick="location.href='#local/{{id_user}}'">
                 <div class="col-xs-12">                
-                    <h5>{{first_name}}</h5>
                     <div class="row">
                         <div class="col-xs-5">
                             <img src="http://test.mepwebs.com/uploads/medias/{{image}}" class="img-responsive" />
                         </div>
                         <div class="col-xs-7">
-                            <p>{{id_ciudad}}</p>
+                            <h4>{{first_name}}</h4>
+                            <p>{{ciudad}}</p>
                         </div>
                     </div>
                 </div>
@@ -158,6 +160,38 @@
         {{/each}}
     </div>
 </script>
+    
+<script id="local-tpl" type="text/template">
+    <div class="container evento-detalle localDetails">
+        <!-- local-details-tpl -->
+    </div>
+    <div class="container-fluid guiaeventos eventoslocal">
+        <h2>Próximos eventos</h2>
+        <!-- eventos -->
+    </div>
+</script>
+    
+<script id="local-details-tpl" type="text/template">
+    <div class="row cuadro">
+        <div class="col-xs-12">
+            <h4><i class="fa fa-music"></i> {{Eventor.first_name}}</h4>
+        </div>
+        <div class="col-xs-12 col-sm-5 col-lg-6">
+            <img src="http://test.mepwebs.com/uploads/medias/{{Eventor.image}}" class="img-responsive" />
+        </div>
+        <div class="col-xs-12 col-sm-7 col-lg-6">
+            <div class="descr-evento">
+                {{{Eventor.resume}}}
+            </div>
+            <div class="datos-evento">
+                <h5>Cómo llegar</h5>
+                <p>{{Eventor.direccion}}. {{Eventor.Ciudad.nombre}}</p>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3500.378140521095!2d-13.937722999999998!3d28.678332999999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xc47b5380ae93091%3A0x74506ba57e202fe1!2sRestaurante+Canela+Caf%C3%A9!5e0!3m2!1ses!2ses!4v1442594850296" frameborder="0" style="border:0" allowfullscreen></iframe>
+            </div>
+        </div> 
+    </div>
+</script>
+
     
 <script src="cordova.js"></script>
     
@@ -174,7 +208,9 @@
 <script src="js/HomeView.js"></script>
 <script src="js/EventoListItemView.js"></script>    
 <script src="js/EventoView.js"></script>
-<script src="js/LocalesView.js"></script>    
+<script src="js/LocalesView.js"></script>
+<script src="js/LocalView.js"></script>
+<script src="js/LocalDetailsView.js"></script>
 <script src="js/app.js"></script>
 
 </body>

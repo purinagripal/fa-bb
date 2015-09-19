@@ -4,7 +4,10 @@
     HomeView.prototype.template = Handlebars.compile($("#home-tpl").html());
     EventoListItemView.prototype.template = Handlebars.compile($("#eventos-list-tpl").html());
     EventoView.prototype.template = Handlebars.compile($("#evento-tpl").html());
+    
     LocalesView.prototype.template = Handlebars.compile($("#locales-tpl").html());
+    LocalView.prototype.template = Handlebars.compile($("#local-tpl").html());
+    LocalDetailsView.prototype.template = Handlebars.compile($("#local-details-tpl").html());
 
     /* ---------------------------------- Local Variables ---------------------------------- */
     var slider = new PageSlider($('body'));
@@ -12,6 +15,7 @@
 
     var homeView;
     var localesView;
+    var localDetailsView;
 
     var AppRouter = Backbone.Router.extend({
 
@@ -20,7 +24,8 @@
             "categ/:id_cat":    "categoria",
             "zona/:id_ciudad":  "ciudad",
             "eventos/:id":      "eventoDetails",
-            "locales":          "locales"
+            "locales":          "locales",
+            "local/:id":        "localDetails"
         },
 
         home: function () {
@@ -113,15 +118,24 @@
             // Since the home view never changes, we instantiate it and render it only once
             if (!localesView) {
                 this.localesList = this.eventosList.obtenerLocales();
-                console.log(this.localesList);
+                console.log(JSON.stringify(this.localesList));
+                
                 localesView = new LocalesView({model: this.localesList});
-                //homeView.render();
             } else {
                 console.log('reusing locales view');
                 localesView.delegateEvents(); // delegate events when the view is recycled
             }
             slider.slidePage(localesView.$el);
-        }
+        },
+        
+        localDetails: function (id) {
+            console.log("localDetails funcion");
+            
+            // lista de eventos del Local
+            this.eventosLocal = new EventoCollection( this.eventosList.where({id_user: id}) );
+            
+            slider.slidePage(new LocalView({collection: this.eventosLocal}).render().$el);
+        },
         
     });
 
@@ -153,15 +167,17 @@
             };
         }
         
+        // Now safe to use device APIs
         document.addEventListener("backbutton", onBackKeyDown, false);
         
-        // Now safe to use device APIs
+        
         /*setTimeout(function() {
             navigator.splashscreen.hide();
         }, 5000);*/
     };
     
     function onBackKeyDown() {
+        // vuelve al home
         Backbone.history.navigate('', {trigger: true});
     };
     
