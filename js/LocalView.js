@@ -18,8 +18,11 @@ var LocalView = Backbone.View.extend({
         return this;
     },
 
+    
     events: {
-        "click .guiaeventos.eventoslocal .cuadro": "l_ver_evento"
+        "click .guiaeventos.eventoslocal .cuadro": "l_ver_evento",
+        "click .boton_atras": "volver_atras",
+        "click .menu_salir": "salir"
     },
     
     l_ver_evento: function (event) {
@@ -29,6 +32,18 @@ var LocalView = Backbone.View.extend({
         //console.log(event);
 
         Backbone.history.navigate('eventos/'+id_evento, {trigger: true});
+    },
+    
+    volver_atras: function (event) {
+        console.log("volver");
+        Backbone.history.history.back();
+        // es lo mismo que:
+        //window.history.back();
+    },
+    
+    salir: function (event) {
+        console.log("SALIR");
+        navigator.app.exitApp();
     }
 
 });

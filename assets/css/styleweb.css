@@ -44,8 +44,19 @@ a:hover{color:#fff;text-decoration:none}
     width: 100%;
     border-bottom: solid 1px #666;
     padding: 10px;
+    background-color:#111;
 }
-.guiaeventos {
+.header-50 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 50px;
+    width: 100%;
+    border-bottom: solid 1px #666;
+    padding: 10px;
+    background-color:#111;
+}
+/*.guiaeventos {
     position: absolute;
     top: 80px;
     bottom: 0;
@@ -56,14 +67,31 @@ a:hover{color:#fff;text-decoration:none}
 .guiaeventos.eventoslocal {
     position: relative;
     top: 0;
+}*/
+.wrapper-absolute-80 {
+    position: absolute;
+    top: 80px;
+    bottom: 0;
+    width: 100%;
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
 }
+.wrapper-absolute-50 {
+    position: absolute;
+    top: 50px;
+    bottom: 0;
+    width: 100%;
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
+}
+
 /* fin header fijo */
 
 /* estilos header */
-.header .head_sup {
+.head_sup {
     text-align: center;
 }
-.header img {
+.head_sup img {
     vertical-align: bottom;
     margin-right: 10px;
 }
@@ -71,9 +99,14 @@ a:hover{color:#fff;text-decoration:none}
     display: inline;
     font-size:1.4em;
 }
+.head_sup .glyphicon {
+    margin-right: 7px;
+    margin-left: 7px;
+}
 
 .menu_drop {
     display: inline;
+    text-align: right;
 }
 a.menu_salir {
     display: inline;
@@ -91,6 +124,9 @@ a.menu_salir {
 .dropdown-menu {
     background-color: #111;
     border: 1px solid #222;
+}
+.dropdown-menu .divider {
+    background-color: #222;
 }
 .dropdown-menu > li > a {
     color: #f2ab00;

@@ -6,6 +6,7 @@ var EventoCollection = Backbone.Collection.extend({
 
     model: Evento,
 
+    //url: "http://localhost/fuerteagenda_cms/agenda_app",
     url: "http://test.mepwebs.com/agenda_app",
     
     obtenerLocales: function(){

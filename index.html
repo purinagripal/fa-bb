@@ -13,17 +13,19 @@
 <script id="home-tpl" type="text/template">
     <div class="header">
         <div class="head_sup">
-            <div class="menu_drop dropdown pull-left">
+            <img src="logo.png" /> <h1>Pella de Ocio</h1>
+            
+            <div class="menu_drop dropdown pull-right">
                 <a class="dropdown-toggle" id="dropdownMenuMain" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                    <span class="glyphicon glyphicon-option-vertical" aria-hidden="true"></span>
+                    <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuMain">
                     <li><a href="#locales">Locales</a></li>
                     <li><a href="#">Eventos</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a class="menu_salir">Salir</a></li>
                 </ul>
             </div>
-            <img src="logo.png" /> <h1>Fuerte Agenda</h1>
-            <a class="menu_salir pull-right"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
             <div class="clearfix"></div>
         </div>
         <div class="head_inf">
@@ -51,34 +53,56 @@
             <div class="clearfix"></div>
         </div>
     </div>
-    <div class="container-fluid guiaeventos">
+    <div class="container-fluid guiaeventos wrapper-absolute-80">
         
     </div>
 </script>
 
 <script id="eventos-list-tpl" type="text/template">
-        <div class="row cuadro" data-id="{{id_evento}}" >
-            <div class="col-xs-9">                
-                <h5><a href="#eventos/{{id_evento}}" >{{title}}</a></h5>
-                <div class="row">
-                    <div class="col-xs-5">
-                        <a href="#eventos/{{id_evento}}" ><img src="http://test.mepwebs.com/uploads/medias/{{image}}" class="img-responsive" /></a>
-                    </div>
-                    <div class="col-xs-7">
-                        <p>{{Eventor.first_name}}</p><p>{{Ciudad.nombre}}</p>
-                    </div>
+    <div class="row cuadro" data-id="{{id_evento}}" >
+        <div class="col-xs-9">                
+            <h5><a href="#eventos/{{id_evento}}" >{{title}}</a></h5>
+            <div class="row">
+                <div class="col-xs-5">
+                    <a href="#eventos/{{id_evento}}" ><img src="http://test.mepwebs.com/uploads/medias/{{image}}" class="img-responsive" /></a>
+                </div>
+                <div class="col-xs-7">
+                    <p>{{Eventor.first_name}}</p><p>{{Ciudad.nombre}}</p>
                 </div>
             </div>
-            <div class="col-xs-3 date">
-                <span class="dia">{{fecha_dm.diasemana}}</span>
-                <span><b>{{fecha_dm.dia}}</b> {{fecha_dm.mes}}</span>
-                <span class="hora">{{hora_format}} h</span>
-            </div>
         </div>
+        <div class="col-xs-3 date">
+            <span class="dia">{{fecha_dm.diasemana}}</span>
+            <span><b>{{fecha_dm.dia}}</b> {{fecha_dm.mes}}</span>
+            <span class="hora">{{hora_format}} h</span>
+        </div>
+    </div>
 </script>
 
 <script id="evento-tpl" type="text/template">
-    <div class="container evento-detalle">
+    <div class="header-50">
+        <div class="head_sup">
+            <a class="boton_atras pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></a>
+            
+            <img src="logo.png" /> <h1>Pella de Ocio</h1>
+            
+            <div class="menu_drop dropdown pull-right">
+                <a class="dropdown-toggle" id="dropdownMenuMain" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuMain">
+                    <li><a href="#locales">Locales</a></li>
+                    <li><a href="#">Eventos</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a class="menu_salir">Salir</a></li>
+                </ul>
+            </div>
+            <a href="#" class="boton_inicio pull-right"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    
+    <div class="container wrapper-absolute-50 evento-detalle">
         <div class="row cuadro">
             <div class="col-xs-12">
                 <h4><i class="fa fa-music"></i> {{title}}</h4>
@@ -115,17 +139,20 @@
 <script id="locales-tpl" type="text/template">
     <div class="header">
         <div class="head_sup">
-            <div class="menu_drop dropdown pull-left">
+            <img src="logo.png" /> <h1>Pella de Ocio</h1>
+            
+            <div class="menu_drop dropdown pull-right">
                 <a class="dropdown-toggle" id="dropdownMenuMain" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                    <span class="glyphicon glyphicon-option-vertical" aria-hidden="true"></span>
+                    <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuMain">
                     <li><a href="#locales">Locales</a></li>
                     <li><a href="#">Eventos</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a class="menu_salir">Salir</a></li>
                 </ul>
             </div>
-            <img src="logo.png" /> <h1>Fuerte Agenda</h1>
-            <a class="menu_salir pull-right"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
+            <a href="#" class="boton_inicio pull-right"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a>
             <div class="clearfix"></div>
         </div>
         <div class="head_inf">
@@ -142,7 +169,7 @@
             <div class="clearfix"></div>
         </div>
     </div>
-    <div class="container-fluid guiaeventos lista-locales">
+    <div class="container-fluid guiaeventos lista-locales wrapper-absolute-80">
         {{#each this}}
             <div class="row cuadro" onclick="location.href='#local/{{id_user}}'">
                 <div class="col-xs-12">                
@@ -152,7 +179,7 @@
                         </div>
                         <div class="col-xs-7">
                             <h4>{{first_name}}</h4>
-                            <p>{{ciudad}}</p>
+                            <p>{{CiudadEventor.nombre}}</p>
                         </div>
                     </div>
                 </div>
@@ -162,15 +189,37 @@
 </script>
     
 <script id="local-tpl" type="text/template">
-<div class="container-fluid">
-    <div class="evento-detalle localDetails">
-        <!-- local-details-tpl -->
+    <div class="header-50">
+        <div class="head_sup">
+            <a class="boton_atras pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></a>
+            
+            <img src="logo.png" /> <h1>Pella de Ocio</h1>
+            
+            <div class="menu_drop dropdown pull-right">
+                <a class="dropdown-toggle" id="dropdownMenuMain" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuMain">
+                    <li><a href="#locales">Locales</a></li>
+                    <li><a href="#">Eventos</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a class="menu_salir">Salir</a></li>
+                </ul>
+            </div>
+            <a href="#" class="boton_inicio pull-right"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a>
+            <div class="clearfix"></div>
+        </div>
     </div>
-    <div class="guiaeventos eventoslocal">
-        <h2>Próximos eventos</h2>
-        <!-- eventos -->
+    
+    <div class="container-fluid wrapper-absolute-50">
+        <div class="evento-detalle localDetails">
+            <!-- local-details-tpl -->
+        </div>
+        <div class="guiaeventos eventoslocal">
+            <h2>Próximos eventos</h2>
+            <!-- eventos -->
+        </div>
     </div>
-</div>
 </script>
     
 <script id="local-details-tpl" type="text/template">
@@ -187,7 +236,7 @@
             </div>
             <div class="datos-evento">
                 <h5>Cómo llegar</h5>
-                <p>{{Eventor.direccion}}. {{Eventor.Ciudad.nombre}}</p>
+                <p>{{Eventor.direccion}}. {{Eventor.CiudadEventor.nombre}}</p>
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3500.378140521095!2d-13.937722999999998!3d28.678332999999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xc47b5380ae93091%3A0x74506ba57e202fe1!2sRestaurante+Canela+Caf%C3%A9!5e0!3m2!1ses!2ses!4v1442594850296" frameborder="0" style="border:0" allowfullscreen></iframe>
             </div>
         </div> 

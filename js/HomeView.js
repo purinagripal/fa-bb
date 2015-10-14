@@ -69,6 +69,7 @@ var HomeView = Backbone.View.extend({
     filtra_categoria: function (event) {
         var id_cat = $(event.currentTarget).attr('data-id'); 
         console.log('id de categoria'+id_cat);
+        // borra del historial
         Backbone.history.navigate('categ/'+id_cat, {trigger: true});
         Backbone.history.navigate('', {replace: true});
     },
@@ -76,6 +77,7 @@ var HomeView = Backbone.View.extend({
     filtra_ciudad: function (event) {
         var id_ciudad = $(event.currentTarget).attr('data-id'); 
         console.log('id de ciudad: '+id_ciudad);
+        // borra del historial
         Backbone.history.navigate('zona/'+id_ciudad, {trigger: true});
         Backbone.history.navigate('', {replace: true});
     },
