@@ -37,6 +37,11 @@
     <icon src="icon.png" />
     <gap:splash src="splash.png" />
     
+    
+    <gap:plugin name"cordova-plugin-whitelist" source="npm" />
+    <allow-navigation href="*" />
+    
+    <!--
     <access origin="*" />
     <plugin name="cordova-plugin-whitelist" version="1" />
     <allow-intent href="http://*/*" />
@@ -44,7 +49,9 @@
     <allow-intent href="tel:*" />
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
-    <allow-intent href="geo:*" />
+    <allow-intent href="geo:*" /> 
+    -->
+    
     <platform name="android">
         <allow-intent href="market:*" />
     </platform>
