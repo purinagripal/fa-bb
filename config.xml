@@ -38,7 +38,7 @@
     <gap:splash src="splash.png" />
     
     
-    <gap:plugin name"cordova-plugin-whitelist" source="npm" />
+    <gap:plugin name="cordova-plugin-whitelist" source="npm" />
     <allow-navigation href="*" />
     
     <!--
