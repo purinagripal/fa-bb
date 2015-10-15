@@ -30,15 +30,25 @@ var LocalView = Backbone.View.extend({
         var id_evento = $(event.currentTarget).attr('data-id'); 
         console.log("ver evento dsd local "+id_evento);
         //console.log(event);
+        
+        // añade entrada al historial
+        window.historial.push('eventos/'+id_evento);
+        console.log("window.historial: "+window.historial);
 
         Backbone.history.navigate('eventos/'+id_evento, {trigger: true});
     },
     
     volver_atras: function (event) {
         console.log("volver");
+        
+        // saca elemento del historial y vuelve al anterior
+        window.historial.pop();
+        console.log("window.historial: "+window.historial);
+        Backbone.history.navigate( window.historial[window.historial.length-1], {trigger: true} );
+        
         //Backbone.history.history.back();
         // es lo mismo que:
-        window.history.back();
+        //window.history.back();
     },
     
     salir: function (event) {

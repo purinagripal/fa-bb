@@ -70,6 +70,9 @@ var HomeView = Backbone.View.extend({
         var id_cat = $(event.currentTarget).attr('data-id'); 
         console.log('id de categoria'+id_cat);
         
+        //window.historial = "home";
+        console.log("window.historial: "+window.historial);
+        
         Backbone.history.navigate('categ/'+id_cat, {trigger: true});
         // borra del historial
         Backbone.history.navigate('', {replace: true});
@@ -78,6 +81,9 @@ var HomeView = Backbone.View.extend({
     filtra_ciudad: function (event) {
         var id_ciudad = $(event.currentTarget).attr('data-id'); 
         console.log('id de ciudad: '+id_ciudad);
+        
+        //window.historial = "home";
+        console.log("window.historial: "+window.historial);
         // borra del historial
         Backbone.history.navigate('zona/'+id_ciudad, {trigger: true});
         Backbone.history.navigate('', {replace: true});
@@ -86,6 +92,11 @@ var HomeView = Backbone.View.extend({
     ver_evento: function (event) {
         var id_evento = $(event.currentTarget).attr('data-id'); 
         console.log("ver evento "+id_evento);
+        
+        // añade entrada al historial
+        window.historial.push('eventos/'+id_evento);
+        console.log("window.historial: "+window.historial);
+        
         //console.log(event);
         Backbone.history.navigate('eventos/'+id_evento, {trigger: true});
     },

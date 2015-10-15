@@ -12,6 +12,7 @@
     /* ---------------------------------- Local Variables ---------------------------------- */
     var slider = new PageSlider($('body'));
     
+    window.historial = [""];
 
     var homeView;
     var localesView;
@@ -157,7 +158,7 @@
         
         localDetails: function (id) {
             console.log("localDetails funcion");
-            console.log(JSON.stringify(this.eventosList));
+            //console.log(JSON.stringify(this.eventosList));
             // lista de eventos del Local
             this.eventosLocal = new EventoCollection( this.eventosList.where({id_user: id}) );
             
@@ -167,7 +168,10 @@
         
     });
 
+    
+    console.log("window.historial: "+window.historial);
     var router = new AppRouter();
+    
     Backbone.history.start();
 
     /* --------------------------------- Event Registration -------------------------------- */
