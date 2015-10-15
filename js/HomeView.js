@@ -69,8 +69,9 @@ var HomeView = Backbone.View.extend({
     filtra_categoria: function (event) {
         var id_cat = $(event.currentTarget).attr('data-id'); 
         console.log('id de categoria'+id_cat);
-        // borra del historial
+        
         Backbone.history.navigate('categ/'+id_cat, {trigger: true});
+        // borra del historial
         Backbone.history.navigate('', {replace: true});
     },
     

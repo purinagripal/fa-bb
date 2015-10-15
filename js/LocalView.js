@@ -36,9 +36,9 @@ var LocalView = Backbone.View.extend({
     
     volver_atras: function (event) {
         console.log("volver");
-        Backbone.history.history.back();
+        //Backbone.history.history.back();
         // es lo mismo que:
-        //window.history.back();
+        window.history.back();
     },
     
     salir: function (event) {

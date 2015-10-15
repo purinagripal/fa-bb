@@ -9,6 +9,7 @@
     </author>
     <content src="index.html" />
     
+    <preference name="useBrowserHistory" value="true"/>
     <preference name="permissions" value="none" />
     <preference name="orientation" value="default" />
     <preference name="target-device" value="universal" />
@@ -31,17 +32,20 @@
     <gap:plugin name="org.apache.cordova.device" />
     <gap:plugin name="org.apache.cordova.dialogs" />
     <gap:plugin name="org.apache.cordova.globalization" />
-    <!--<gap:plugin name="org.apache.cordova.inappbrowser" /> -->
     <gap:plugin name="org.apache.cordova.splashscreen" />
+    <gap:plugin name="org.apache.cordova.inappbrowser" source="pgb" version="0.5.2" />
+
+    <!--<gap:plugin name="org.apache.cordova.inappbrowser" /> -->
+    
     
     <icon src="icon.png" />
     <gap:splash src="splash.png" />
     
-    
+    <!--
     <gap:plugin name="cordova-plugin-whitelist" source="npm" />
     <allow-navigation href="*" />
-    
-    <!--
+    -->
+
     <access origin="*" />
     <plugin name="cordova-plugin-whitelist" version="1" />
     <allow-intent href="http://*/*" />
@@ -50,7 +54,6 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" /> 
-    -->
     
     <platform name="android">
         <allow-intent href="market:*" />
