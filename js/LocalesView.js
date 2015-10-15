@@ -29,7 +29,29 @@ var LocalesView = Backbone.View.extend({
     },
 
     events: {
-        "click .menu_salir": "salir"
+        "click .menu_salir": "salir",
+        "click .link_eventos": "volver_inicio",
+        "click .boton_inicio": "volver_inicio",
+        "click .row.cuadro": "ver_local",
+    },
+    
+    ver_local: function (event) {
+        var id_local = $(event.currentTarget).attr('data-id'); 
+        console.log("ver local "+id_local);
+        
+        // añade entrada al historial
+        window.historial.push('local/'+id_local);
+        console.log("window.historial: "+window.historial);
+        
+        //console.log(event);
+        Backbone.history.navigate('local/'+id_local, {trigger: true});
+    },
+    
+    volver_inicio: function (event) {
+        // resetea el historial
+        window.historial = [""];
+        console.log("window.historial: "+window.historial);
+        Backbone.history.navigate( "", {trigger: true} );
     },
 
     salir: function (event) {

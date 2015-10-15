@@ -122,7 +122,7 @@
             // Since the home view never changes, we instantiate it and render it only once
             if (!localesView) {
                 this.localesList = this.eventosList.obtenerLocales();
-                console.log(JSON.stringify(this.localesList));
+                //console.log(JSON.stringify(this.localesList));
                 
                 localesView = new LocalesView({model: this.localesList});
             } else {
@@ -210,6 +210,9 @@
     
     function onBackKeyDown() {
         // vuelve al home
+        // reinicia historial
+        window.historial = [""];
+        
         Backbone.history.navigate('', {trigger: true});
     };
     

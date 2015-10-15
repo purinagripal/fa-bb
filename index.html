@@ -20,8 +20,8 @@
                     <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuMain">
-                    <li><a href="#locales">Locales</a></li>
-                    <li><a href="#">Eventos</a></li>
+                    <li><a class="link_locales" >Locales</a></li>
+                    <li><a class="link_eventos" href="#">Eventos</a></li>
                     <li role="separator" class="divider"></li>
                     <li><a class="menu_salir">Salir</a></li>
                 </ul>
@@ -91,13 +91,13 @@
                     <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuMain">
-                    <li><a href="#locales">Locales</a></li>
-                    <li><a href="#">Eventos</a></li>
+                    <li><a class="link_locales" >Locales</a></li>
+                    <li><a class="link_eventos" >Eventos</a></li>
                     <li role="separator" class="divider"></li>
                     <li><a class="menu_salir">Salir</a></li>
                 </ul>
             </div>
-            <a href="#" class="boton_inicio pull-right"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a>
+            <a class="boton_inicio pull-right"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a>
             <div class="clearfix"></div>
         </div>
     </div>
@@ -146,13 +146,13 @@
                     <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuMain">
-                    <li><a href="#locales">Locales</a></li>
-                    <li><a href="#">Eventos</a></li>
+                    <li><a class="link_locales" href="#locales" >Locales</a></li>
+                    <li><a class="link_eventos" >Eventos</a></li>
                     <li role="separator" class="divider"></li>
                     <li><a class="menu_salir">Salir</a></li>
                 </ul>
             </div>
-            <a href="#" class="boton_inicio pull-right"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a>
+            <a class="boton_inicio pull-right"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a>
             <div class="clearfix"></div>
         </div>
         <div class="head_inf">
@@ -171,7 +171,7 @@
     </div>
     <div class="container-fluid guiaeventos lista-locales wrapper-absolute-80">
         {{#each this}}
-            <div class="row cuadro" onclick="location.href='#local/{{id_user}}'">
+            <div class="row cuadro" data-id="{{id_user}}" >
                 <div class="col-xs-12">                
                     <div class="row">
                         <div class="col-xs-5">
@@ -200,13 +200,13 @@
                     <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuMain">
-                    <li><a href="#locales">Locales</a></li>
-                    <li><a href="#">Eventos</a></li>
+                    <li><a class="link_locales" >Locales</a></li>
+                    <li><a class="link_eventos" >Eventos</a></li>
                     <li role="separator" class="divider"></li>
                     <li><a class="menu_salir">Salir</a></li>
                 </ul>
             </div>
-            <a href="#" class="boton_inicio pull-right"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a>
+            <a class="boton_inicio pull-right"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a>
             <div class="clearfix"></div>
         </div>
     </div>

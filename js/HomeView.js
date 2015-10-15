@@ -60,6 +60,8 @@ var HomeView = Backbone.View.extend({
     },
 
     events: {
+        "click .link_locales": "ver_locales",
+        //"click .link_eventos": "salir",
         "click .menu_salir": "salir",
         "click .row.cuadro": "ver_evento",
         "click .filt_categ": "filtra_categoria",
@@ -100,6 +102,16 @@ var HomeView = Backbone.View.extend({
         //console.log(event);
         Backbone.history.navigate('eventos/'+id_evento, {trigger: true});
     },
+    
+    ver_locales: function (event) {        
+        // reset historial
+        window.historial = ['locales'];
+        console.log("window.historial: "+window.historial);
+        
+        //console.log(event);
+        Backbone.history.navigate('locales', {trigger: true});
+    },
+
 
     salir: function (event) {
         console.log("SALIR");

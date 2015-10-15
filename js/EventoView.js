@@ -12,6 +12,9 @@ var EventoView = Backbone.View.extend({
     
     events: {
         "click .local_link": "ver_local",
+        "click .link_locales": "ver_locales",
+        "click .link_eventos": "volver_inicio",
+        "click .boton_inicio": "volver_inicio",
         "click .boton_atras": "volver_atras",
         "click .menu_salir": "salir"
     },
@@ -24,6 +27,22 @@ var EventoView = Backbone.View.extend({
         console.log("window.historial: "+window.historial);
         
         Backbone.history.navigate('local/'+id_local, {trigger: true});
+    },
+    
+    ver_locales: function (event) {        
+        // resetea el historial
+        window.historial = ['locales'];
+        console.log("window.historial: "+window.historial);
+        
+        //console.log(event);
+        Backbone.history.navigate('locales', {trigger: true});
+    },
+    
+    volver_inicio: function (event) {
+        // resetea el historial
+        window.historial = [""];
+        console.log("window.historial: "+window.historial);
+        Backbone.history.navigate( "", {trigger: true} );
     },
     
     volver_atras: function (event) {
