@@ -9,7 +9,7 @@
     </author>
     <content src="index.html" />
     
-    <preference name="phonegap-version" value="cli-5.1.1" />
+    <preference name="phonegap-version" value="cli-5.2.0" />
     
 <!--    <preference name="useBrowserHistory" value="true"/>-->
     <preference name="permissions" value="none" />
@@ -33,12 +33,12 @@
     <gap:plugin name="org.apache.cordova.dialogs" />
     <gap:plugin name="org.apache.cordova.globalization" />
     
-    <gap:plugin name="org.apache.cordova.splashscreen" />
-    <preference name="SplashScreen" value="splash"/>
-    <!--    <preference name="SplashScreenDelay" value="5000" />-->
-    <preference name="show-splash-screen-spinner" value="true" />
-    <preference name="auto-hide-splash-screen" value="false" />
-    <splash src="splash.png" />
+    <gap:plugin name="org.apache.cordova.splashscreen" src="npm" />
+    <preference name="SplashScreen" value="splash" />
+    <preference name="SplashScreenDelay" value="5000" />
+    <preference name="ShowSplashScreenSpinner" value="false"/>
+    <preference name="AutoHideSplashScreen" value="false" />
+    <gap:splash src="splash.png" />
     
     <!--<gap:plugin name="org.apache.cordova.inappbrowser" /> -->
     
