@@ -1,15 +1,17 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.phonegap.helloworld" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
-    <name>F-A</name>
+    <name>Pella de Ocio</name>
     <description>
-        App FA
+        App Pella de Ocio
     </description>
     <author email="support@phonegap.com" href="http://phonegap.com">
         Mepwebs
     </author>
     <content src="index.html" />
     
-    <preference name="useBrowserHistory" value="true"/>
+    <preference name="phonegap-version" value="cli-5.1.1" />
+    
+<!--    <preference name="useBrowserHistory" value="true"/>-->
     <preference name="permissions" value="none" />
     <preference name="orientation" value="default" />
     <preference name="target-device" value="universal" />
@@ -20,10 +22,8 @@
     <preference name="ios-statusbarstyle" value="black-opaque" />
     <preference name="detect-data-types" value="true" />
     <preference name="exit-on-suspend" value="false" />
-    <preference name="show-splash-screen-spinner" value="true" />
-    <preference name="auto-hide-splash-screen" value="false" />
-    <preference name="SplashScreen" value="splash"/>
-<!--    <preference name="SplashScreenDelay" value="5000" />-->
+    
+
     <preference name="disable-cursor" value="false" />
     <preference name="android-minSdkVersion" value="10" />
     <preference name="android-installLocation" value="auto" />
@@ -32,7 +32,13 @@
     <gap:plugin name="org.apache.cordova.device" />
     <gap:plugin name="org.apache.cordova.dialogs" />
     <gap:plugin name="org.apache.cordova.globalization" />
+    
     <gap:plugin name="org.apache.cordova.splashscreen" />
+    <preference name="SplashScreen" value="splash"/>
+    <!--    <preference name="SplashScreenDelay" value="5000" />-->
+    <preference name="show-splash-screen-spinner" value="true" />
+    <preference name="auto-hide-splash-screen" value="false" />
+    
     <!--<gap:plugin name="org.apache.cordova.inappbrowser" /> -->
     
     
