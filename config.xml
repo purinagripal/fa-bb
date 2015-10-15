@@ -38,12 +38,13 @@
     <!--    <preference name="SplashScreenDelay" value="5000" />-->
     <preference name="show-splash-screen-spinner" value="true" />
     <preference name="auto-hide-splash-screen" value="false" />
+    <splash src="splash.png" />
     
     <!--<gap:plugin name="org.apache.cordova.inappbrowser" /> -->
     
     
     <icon src="icon.png" />
-    <gap:splash src="splash.png" />
+    
     
     <gap:plugin name="cordova-plugin-whitelist" source="npm" />
     <allow-navigation href="*" />
