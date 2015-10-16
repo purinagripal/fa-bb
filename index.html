@@ -5,6 +5,7 @@
     <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, height=device-height, user-scalable=no" />
 
     <link href="assets/css/bootstrap.css" rel="stylesheet"/>
+    <link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
     <link href="assets/css/styleweb.css" rel="stylesheet"/>
     <link href="assets/css/pageslider.css" rel="stylesheet">
 </head>
@@ -54,19 +55,7 @@
         </div>
     </div>
     <div class="container-fluid guiaeventos wrapper-absolute-80">
-        <button onclick="window.plugins.socialsharing.share('Message only')">message only</button>
-        <button onclick="window.plugins.socialsharing.share('Message and subject', 'The subject')">message and subject</button>
-        <button onclick="window.plugins.socialsharing.share(null, null, null, 'http://www.x-services.nl')">link only</button>
-        <button onclick="window.plugins.socialsharing.share('Message and link', null, null, 'http://www.x-services.nl')">message and link</button>
-        <button onclick="window.plugins.socialsharing.share(null, null, 'https://www.google.nl/images/srpr/logo4w.png', null)">image only</button>
-        // Beware: passing a base64 file as 'data:' is not supported on Android 2.x: https://code.google.com/p/android/issues/detail?id=7901#c43
-        // Hint: when sharing a base64 encoded file on Android you can set the filename by passing it as the subject (second param)
-        <button onclick="window.plugins.socialsharing.share(null, 'Android filename', 'data:image/png;base64,R0lGODlhDAAMALMBAP8AAP///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAUKAAEALAAAAAAMAAwAQAQZMMhJK7iY4p3nlZ8XgmNlnibXdVqolmhcRQA7', null)">base64 image only</button>
-        // Hint: you can share multiple files by using an array as thirds param: ['file 1','file 2', ..], but beware of this Android Kitkat Facebook issue: [#164]
-        <button onclick="window.plugins.socialsharing.share('Message and image', null, 'https://www.google.nl/images/srpr/logo4w.png', null)">message and image</button>
-        <button onclick="window.plugins.socialsharing.share('Message, image and link', null, 'https://www.google.nl/images/srpr/logo4w.png', 'http://www.x-services.nl')">message, image and link</button>
-        <button onclick="window.plugins.socialsharing.share('Message, subject, image and link', 'The subject', 'https://www.google.nl/images/srpr/logo4w.png', 'http://www.x-services.nl')">message, subject, image and link</button>
-        
+    
     </div>
 </script>
 
@@ -95,6 +84,7 @@
     <div class="header-50">
         <div class="head_sup">
             <a class="boton_atras pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></a>
+            <a class="boton_inicio pull-left"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a>
             
             <img src="logo.png" /> <h1>Pella de Ocio</h1>
             
@@ -109,8 +99,9 @@
                     <li><a class="menu_salir">Salir</a></li>
                 </ul>
             </div>
-            <a class="pull-right" href="whatsapp://send?text={{title}}, visita http://test.mepwebs.com/es/evento-{{id_evento}} para más info"><span class="glyphicon glyphicon-share" aria-hidden="true"></span></a>
-            <a class="boton_inicio pull-right"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a>
+            <a class="pull-right" onclick="window.plugins.socialsharing.share('Próximamente {{title}}, pincha en el enlace para más info.', 'Pella de Ocio', null, 'http://test.mepwebs.com/es/evento-{{id_evento}}')"><i class="fa fa-share-alt"></i></a>
+            <!--<a class="pull-right" href="whatsapp://send?text={{title}}, visita http://test.mepwebs.com/es/evento-{{id_evento}} para más info"><span class="glyphicon glyphicon-share" aria-hidden="true"></span></a>-->
+            
             <div class="clearfix"></div>
         </div>
     </div>
@@ -152,6 +143,8 @@
 <script id="locales-tpl" type="text/template">
     <div class="header">
         <div class="head_sup">
+            <a class="boton_inicio pull-left"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a>
+            
             <img src="logo.png" /> <h1>Pella de Ocio</h1>
             
             <div class="menu_drop dropdown pull-right">
@@ -165,7 +158,6 @@
                     <li><a class="menu_salir">Salir</a></li>
                 </ul>
             </div>
-            <a class="boton_inicio pull-right"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a>
             <div class="clearfix"></div>
         </div>
         <div class="head_inf">
@@ -205,6 +197,7 @@
     <div class="header-50">
         <div class="head_sup">
             <a class="boton_atras pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></a>
+            <a class="boton_inicio pull-left"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a>
             
             <img src="logo.png" /> <h1>Pella de Ocio</h1>
             
@@ -219,7 +212,7 @@
                     <li><a class="menu_salir">Salir</a></li>
                 </ul>
             </div>
-            <a class="boton_inicio pull-right"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a>
+            <a class="pull-right" onclick="window.plugins.socialsharing.share('{{Eventor.first_name}}, pincha en el enlace para más info.', 'Pella de Ocio', null, 'http://test.mepwebs.com/es/')"><i class="fa fa-share-alt"></i></a>
             <div class="clearfix"></div>
         </div>
     </div>

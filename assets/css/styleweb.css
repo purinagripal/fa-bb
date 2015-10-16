@@ -100,8 +100,14 @@ a:hover{color:#fff;text-decoration:none}
     font-size:1.4em;
 }
 .head_sup .glyphicon {
-    margin-right: 7px;
-    margin-left: 7px;
+    margin-right: 8px;
+    margin-left: 8px;
+    font-size: 1.2em;
+}
+.head_sup .fa {
+    margin-right: 8px;
+    margin-left: 8px;
+    font-size: 1.4em;
 }
 
 .menu_drop {
@@ -218,6 +224,13 @@ a.menu_salir {
 
 /* Extra small devices (phones, less than 768px) */
 /* No media query since this is the default in Bootstrap */
+/* para móviles muy peques */
+@media (max-width: 374px) {
+    .head_sup h1 {
+        font-size:1.1em;
+    }
+    
+}
 
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) {
