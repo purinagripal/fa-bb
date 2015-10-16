@@ -49,6 +49,7 @@
     <gap:plugin name="cordova-plugin-whitelist" source="npm" />
     <allow-navigation href="*" />
     <access origin="*" />
+    <access origin="whatsapp:*" launch-external="yes" />
     
     <!--
     <access origin="*" />
