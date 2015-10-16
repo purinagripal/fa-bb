@@ -43,14 +43,16 @@
     <!--<gap:plugin name="org.apache.cordova.inappbrowser" /> -->
     
     
-    <icon src="icon.png" />
+    <!--    Compartir en RRSS   -->
+    <gap:plugin name="cordova-plugin-x-socialsharing" source="npm" />
+
     
-    
+    <!--    WhiteList   -->
     <gap:plugin name="cordova-plugin-whitelist" source="npm" />
     <allow-navigation href="*" />
     <access origin="*" />
-    <access origin="whatsapp:*" launch-external="yes" />
-    
+    <allow-intent href="whatsapp:*" />
+    <access origin="whatsapp:*" launch-external="yes" />    
     <!--
     <access origin="*" />
     <plugin name="cordova-plugin-whitelist" version="1" />
@@ -61,6 +63,9 @@
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" /> 
     -->
+    
+    
+    <icon src="icon.png" />
     
     <platform name="android">
         <allow-intent href="market:*" />
