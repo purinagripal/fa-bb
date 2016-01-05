@@ -116,6 +116,10 @@
 
             $("html,body").scrollTop(0);
             slider.slidePage(new EventoView({model: this.evento}).render().$el);
+            
+            // para que el mapa se vea más de una vez
+            google.maps.event.trigger(window.map, 'resize');
+            window.map.setCenter(window.mapOptions.center);
         },
         
         locales: function () {

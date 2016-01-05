@@ -31,7 +31,7 @@ var LocalDetailsView = Backbone.View.extend({
         
         
         
-        console.log(window.map);
+        //console.log(window.map);
 
         //console.log(this.model);
         

@@ -9,6 +9,20 @@ var EventoView = Backbone.View.extend({
         
         var datosModelo = this.model.attributes;
         
+        var div_canvas = $('#eve-map-canvas', this.el)[0];
+        
+        var myLatlng = new google.maps.LatLng(36.7650246, -4.5646187); 
+        window.mapOptions = { 
+            zoom: 8, 
+            center: myLatlng
+        }; 
+        window.map = new google.maps.Map(div_canvas, window.mapOptions);
+        window.marker = new google.maps.Marker({ 
+            position: myLatlng, 
+            map: window.map, 
+            title: 'titulo'
+        });
+        
         return this;
     },
     
