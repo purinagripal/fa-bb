@@ -157,13 +157,17 @@
         },
         
         localDetails: function (id) {
-            console.log("localDetails funcion");
+            console.log("localDetails link");
             //console.log(JSON.stringify(this.eventosList));
             // lista de eventos del Local
             this.eventosLocal = new EventoCollection( this.eventosList.where({id_user: id}) );
             
             $("html,body").scrollTop(0);
             slider.slidePage(new LocalView({collection: this.eventosLocal}).render().$el);
+            
+            // para que el mapa se vea más de una vez
+            google.maps.event.trigger(window.map, 'resize');
+            window.map.setCenter(window.mapOptions.center);
         }
         
     });
