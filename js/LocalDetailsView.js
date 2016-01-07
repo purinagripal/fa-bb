@@ -17,9 +17,9 @@ var LocalDetailsView = Backbone.View.extend({
         
         var div_canvas = $('#local-map-canvas', this.el)[0];
         
-        var myLatlng = new google.maps.LatLng(28.6739669+datosModelo.id_user, -13.95281); 
+        var myLatlng = new google.maps.LatLng(datosModelo.Eventor.lat, datosModelo.Eventor.long); 
         window.mapOptions = { 
-            zoom: 14, 
+            zoom: 17, 
             center: myLatlng
         }; 
         window.map = new google.maps.Map(div_canvas, window.mapOptions);
