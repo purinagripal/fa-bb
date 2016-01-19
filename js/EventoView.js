@@ -15,7 +15,8 @@ var EventoView = Backbone.View.extend({
         var myLatlng = new google.maps.LatLng(datosModelo.lat, datosModelo.long); 
         window.mapOptions = { 
             zoom: 17, 
-            center: myLatlng
+            center: myLatlng,
+            draggable: false
         }; 
         window.map = new google.maps.Map(div_canvas, window.mapOptions);
         window.marker = new google.maps.Marker({ 
@@ -49,7 +50,7 @@ var EventoView = Backbone.View.extend({
     
     ver_locales: function (event) {        
         // resetea el historial
-        window.historial = ['locales'];
+        window.historial = ['', 'locales'];
         console.log("window.historial: "+window.historial);
         
         //console.log(event);

@@ -20,7 +20,8 @@ var LocalDetailsView = Backbone.View.extend({
         var myLatlng = new google.maps.LatLng(datosModelo.Eventor.lat, datosModelo.Eventor.long); 
         window.mapOptions = { 
             zoom: 17, 
-            center: myLatlng
+            center: myLatlng,
+            draggable: false
         }; 
         window.map = new google.maps.Map(div_canvas, window.mapOptions);
         window.marker = new google.maps.Marker({ 

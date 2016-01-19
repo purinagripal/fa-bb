@@ -28,11 +28,20 @@ var HomeView = Backbone.View.extend({
             case '1':
                 categ_txt = 'Música';
                 break;
-            case '4':
+            case '2':
+                categ_txt = 'Espectáculos';
+                break;
+            case '3':
                 categ_txt = 'Talleres';
                 break;
-            case '5':
+            case '4':
                 categ_txt = 'Charlas';
+                break;
+            case '5':
+                categ_txt = 'Deportes';
+                break;
+            case '6':
+                categ_txt = 'Para niños';
                 break;
             default:
                 categ_txt = 'Categoría';
@@ -47,6 +56,21 @@ var HomeView = Backbone.View.extend({
                 break;
             case '2':
                 ciudad_txt = 'Corralejo';
+                break;
+            case '3':
+                ciudad_txt = 'Cotillo';
+                break;
+            case '4':
+                ciudad_txt = 'La Oliva';
+                break;
+            case '5':
+                ciudad_txt = 'Tindaya';
+                break;
+            case '6':
+                ciudad_txt = 'Puerto del Rosario';
+                break;
+            case '7':
+                ciudad_txt = 'Puerto Lajas';
                 break;
             default:
                 ciudad_txt = 'Ciudad';
@@ -105,7 +129,7 @@ var HomeView = Backbone.View.extend({
     
     ver_locales: function (event) {        
         // reset historial
-        window.historial = ['locales'];
+        window.historial = ['', 'locales'];
         console.log("window.historial: "+window.historial);
         
         //console.log(event);

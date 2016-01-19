@@ -44,7 +44,7 @@ var LocalView = Backbone.View.extend({
     
      ver_locales: function (event) {        
         // resetea el historial
-        window.historial = ['locales'];
+        window.historial = ['', 'locales'];
         console.log("window.historial: "+window.historial);
         
         //console.log(event);
