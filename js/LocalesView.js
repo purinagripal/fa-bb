@@ -20,8 +20,23 @@ var LocalesView = Backbone.View.extend({
             case '2':
                 ciudad_txt = 'Corralejo';
                 break;
+            case '3':
+                ciudad_txt = 'Cotillo';
+                break;
+            case '4':
+                ciudad_txt = 'La Oliva';
+                break;
+            case '5':
+                ciudad_txt = 'Tindaya';
+                break;
+            case '6':
+                ciudad_txt = 'Puerto';
+                break;
+            case '7':
+                ciudad_txt = 'P. Lajas';
+                break;
             default:
-                ciudad_txt = 'Ciudad';
+                ciudad_txt = 'Lugar';
         }
         this.$('#dropdownMenuCiudad').html(ciudad_txt+' <span class="caret"></span>');
                 
@@ -33,6 +48,7 @@ var LocalesView = Backbone.View.extend({
         "click .link_eventos": "volver_inicio",
         "click .boton_inicio": "volver_inicio",
         "click .row.cuadro": "ver_local",
+        "click .filt_zona": "filtra_ciudad"
     },
     
     ver_local: function (event) {
@@ -47,11 +63,22 @@ var LocalesView = Backbone.View.extend({
         Backbone.history.navigate('local/'+id_local, {trigger: true});
     },
     
+    filtra_ciudad: function (event) {
+        var id_ciudad = $(event.currentTarget).attr('data-id'); 
+        console.log('id de ciudad: '+id_ciudad);
+        
+        //window.historial = "home";
+        console.log("window.historial: "+window.historial);
+        // borra del historial
+        Backbone.history.navigate('zona_loc/'+id_ciudad, {trigger: true});
+        Backbone.history.navigate('', {replace: true});
+    },
+    
     volver_inicio: function (event) {
         // resetea el historial
         window.historial = [""];
         console.log("window.historial: "+window.historial);
-        Backbone.history.navigate( "", {trigger: true} );
+        Backbone.history.navigate('', {trigger: true});
     },
 
     salir: function (event) {
